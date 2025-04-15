@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:online_groceries_app/View/Auth_view/Location_view/Location%20view.dart';
+import 'package:online_groceries_app/Views/Home_views/Stack.dart';
+
+
 void main()
 {
   runApp(MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Location_screen(),
+      home: Stack_class(),
     );
   }
 }
