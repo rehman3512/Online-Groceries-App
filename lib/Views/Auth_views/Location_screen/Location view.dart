@@ -16,7 +16,8 @@ class _Location_screenState extends State<Location_screen> {
       //  mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        Image.asset("lib/assets/illustration.png"),
+          SizedBox(height: 50,),
+        Image.asset("lib/controller/constant/app_assets/illustration.png"),
         SizedBox(height: 30,),
         Text("Select your location",style: GoogleFonts.abel(
           fontSize: 20,fontWeight: FontWeight.w700,
