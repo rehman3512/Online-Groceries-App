@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_groceries_app/Views/Auth_views/Location_screen/Location%20view.dart';
+import 'package:online_groceries_app/Views/Auth_views/Number_screen/Number_Screen.dart';
+import 'package:online_groceries_app/Views/Auth_views/Signin_screen/signin_Screen.dart';
+import 'package:online_groceries_app/Views/Auth_views/Verification_screen/Verification_Screen.dart';
 import 'package:online_groceries_app/Views/Starting_screen/Onboarding_screen/onboarding.dart';
 import 'package:online_groceries_app/Views/Starting_screen/Splash_screen/splash_Screen.dart';
 
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: onboarding(),
+      home: VerificationScreen(),
     );
   }
 }

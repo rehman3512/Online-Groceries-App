@@ -20,19 +20,25 @@ class _onboardingState extends State<onboarding> {
         children: [
           //ImageIcon(AssetImage(Appasset.appIconlogo),color: App_Colors.primarycolor,),
           //Image.asset(Appasset.appIconlogo,color: App_Colors.primarycolor,),
-          Image.asset('lib/controller/constants/app_assets/8140 1.png',),
+          Image.asset('lib/controller/constants/app_assets/8140 1.png',fit: BoxFit.fill,),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset('lib/controller/constants/app_assets/Group.png',),
+              SizedBox(height: 10,),
               Text("Welcome",style: TextStyle(color: App_Colors.whitecolor,
               fontSize: 48,),),
-              Text("to ${Apptext.appName}",style: TextStyle(color: App_Colors.whitecolor,fontSize: 48),),
-              SizedBox(height: 15,),
+              Text("to our store",style: TextStyle(color: App_Colors.whitecolor,fontSize: 48),),
+              SizedBox(height: 10,),
               Text("Get your groceries in as fast as one hour",style: TextStyle(
-                  color: App_Colors.whitecolor,),),
-              Center(child: TextComponents(text: 'hello',),)
+                  color: App_Colors.greyColor,fontSize: 16),),
+              SizedBox(height: 35,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 55),
+                child: Image.asset('lib/controller/constants/app_assets/started.png'),
+              ),
+              SizedBox(height: 75,),
             ],),
         ],
       ),
