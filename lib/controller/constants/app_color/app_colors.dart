@@ -9,4 +9,6 @@ class App_Colors{
   static Color darkgreycolor = Color(0xff828282);
   static Color lightwhitecolor = Color(0xffE2E2E2);
   static Color greycolor = Color(0xff7C7C7C);
+  static Color darkblueColor = Color(0xff4a66AC);
+  static Color lightblueColor = Color(0xff5383EC);
 }

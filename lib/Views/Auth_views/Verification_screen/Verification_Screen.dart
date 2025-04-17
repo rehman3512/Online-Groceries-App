@@ -12,26 +12,59 @@ class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image.asset('lib/controller/constants/app_assets/rightArowback.png'),
+          Row(children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextButton( onPressed: (){},
+                child: Text("Resend Code",style: TextStyle(
+                    color: App_Colors.primarycolor,fontSize: 18),),
+              ),
+            ),
+            Spacer(),
+            Image.asset('assets/leftArowbutton.png')
+          ],),
+      ],),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 30,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Image.asset('assets/rightArowback.png'),
+          ),
           SizedBox(height: 50,),
-          Text("Enter your 4-digit code",style: TextStyle(
-              color: App_Colors.blackcolor,fontSize: 26),),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text("Enter your 4-digit code",style: TextStyle(
+                color: App_Colors.blackcolor,fontSize: 26),),
+          ),
           SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text("Code", style: TextStyle(
                 color: App_Colors.greycolor,fontSize: 16),),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Image.asset('lib/controller/constants/app_assets/code.png'),
-          ),
-          SizedBox(height: 100,),
-          ListTile( title:  Text("Resend Code",style: TextStyle(
-              color: App_Colors.primarycolor,fontSize: 18),),
-              trailing: Image.asset('lib/controller/constants/app_assets/leftArowbutton.png')),
+          SizedBox(height: 15),
+          Divider(),//Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 20),
+          //   child: TextFormField(
+          //     decoration: InputDecoration(
+          //       border: OutlineInputBorder(),
+          //     ),
+          //     keyboardType: TextInputType.number,
+          //     maxLength: 4,
+          //     validator: (String? value) {
+          //       if(value!.length !=4) {
+          //         return "please enter a 4-digit code";
+          //       }
+          //       return null;
+          //     },
+          //   ),
+          // ),
+          //
         ],),
     );
   }

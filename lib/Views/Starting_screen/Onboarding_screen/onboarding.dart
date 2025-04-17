@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Auth_views/Signin_screen/signin_Screen.dart';
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/apptext/apptext.dart';
@@ -20,12 +22,13 @@ class _onboardingState extends State<onboarding> {
         children: [
           //ImageIcon(AssetImage(Appasset.appIconlogo),color: App_Colors.primarycolor,),
           //Image.asset(Appasset.appIconlogo,color: App_Colors.primarycolor,),
-          Image.asset('lib/controller/constants/app_assets/8140 1.png',fit: BoxFit.fill,),
+          Positioned( top: 0,left: 0,
+              child: Image.asset('assets/8140 1.png',fit: BoxFit.fill,)),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('lib/controller/constants/app_assets/Group.png',),
+              Image.asset('assets/Group.png',),
               SizedBox(height: 10,),
               Text("Welcome",style: TextStyle(color: App_Colors.whitecolor,
               fontSize: 48,),),
@@ -33,12 +36,24 @@ class _onboardingState extends State<onboarding> {
               SizedBox(height: 10,),
               Text("Get your groceries in as fast as one hour",style: TextStyle(
                   color: App_Colors.greyColor,fontSize: 16),),
-              SizedBox(height: 35,),
+              SizedBox(height: 25,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 55),
-                child: Image.asset('lib/controller/constants/app_assets/started.png'),
+                child: InkWell( onTap: (){
+                  Get.to(()=>Signin_Screen());
+                },
+                  child: Container(height: 55,width: 380,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: App_Colors.primarycolor,
+                  
+                  ),
+                    child: Center(child: Text("Get Started",style: TextStyle(
+                        color: App_Colors.whitecolor,fontSize: 18,),),),
+                  ),
+                ),
               ),
-              SizedBox(height: 75,),
+              SizedBox(height: 60,),
             ],),
         ],
       ),
