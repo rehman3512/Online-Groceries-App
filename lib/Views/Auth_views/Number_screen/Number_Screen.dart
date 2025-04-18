@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:online_groceries_app/Views/Auth_views/Verification_screen/Verification_Screen.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 
 class NumberScreen extends StatefulWidget {
@@ -17,7 +19,9 @@ class _NumberScreenState extends State<NumberScreen> {
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-        Image.asset('assets/leftArowbutton.png'),
+        InkWell(onTap: (){
+          Get.to(()=>VerificationScreen());
+    },child: Image.asset('assets/leftArowbutton.png'),),
           SizedBox(height: 10,),
       ],),
       body: Column(
@@ -26,7 +30,9 @@ class _NumberScreenState extends State<NumberScreen> {
           SizedBox(height: 30,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Image.asset('assets/rightArowback.png'),
+            child: InkWell(onTap: (){
+              Navigator.pop(context);
+            },child: Image.asset('assets/rightArowback.png'),),
           ),
         SizedBox(height: 50,),
         Padding(

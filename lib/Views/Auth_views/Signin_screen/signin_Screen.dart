@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Auth_views/Number_screen/Number_Screen.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -68,7 +70,9 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                 fontSize: 14,color: App_Colors.darkgreycolor),),),
             SizedBox(height: 30,),
             Padding(padding: EdgeInsets.symmetric(horizontal: 20),
-              child: InkWell( onTap: (){},
+              child: InkWell( onTap: (){
+                Get.to(()=>NumberScreen());
+              },
                 child: Container(height: 55,width: 380,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -82,7 +86,9 @@ class _Signin_ScreenState extends State<Signin_Screen> {
             ),
             SizedBox(height: 15,),
             Padding(padding: EdgeInsets.symmetric(horizontal: 20),
-              child: InkWell( onTap: (){},
+              child: InkWell( onTap: (){
+                Get.to(()=>NumberScreen());
+              },
                 child: Container(height: 55,width: 380,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
