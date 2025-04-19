@@ -38,7 +38,7 @@ class _onboardingState extends State<onboarding> {
                   color: App_Colors.greyColor,fontSize: 16),),
               SizedBox(height: 25,),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 55),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: InkWell( onTap: (){
                   Get.to(()=>Signin_Screen());
                 },

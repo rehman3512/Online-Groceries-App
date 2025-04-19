@@ -65,14 +65,15 @@ class _Location_screenState extends State<Location_screen> {
             InkWell( onTap: (){
               Get.to(()=>LoginScreen());
             },
-              child: Container( height: 45,
-                margin: EdgeInsets.symmetric(horizontal: 15),
+              child: Container( height: 55,
+                margin: EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.green,
                 ),
-                child: Center(child: Text("Submit",style: GoogleFonts.abel(
-                  color: Colors.white,),
+                child: Center(child: Text("Submit",style: TextStyle(
+                    color: App_Colors.whitecolor,fontSize: 16,
+                    fontWeight: FontWeight.w600),
                 ),),
               ),
             ),

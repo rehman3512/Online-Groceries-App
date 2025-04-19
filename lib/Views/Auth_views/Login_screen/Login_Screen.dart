@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Center(child: InkWell( onTap: (){
             Get.to(()=>HomeScreen());
           },
-            child: Container(height: 55,width: 280,
+            child: Container(height: 55,width: 340,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: App_Colors.primarycolor,),
