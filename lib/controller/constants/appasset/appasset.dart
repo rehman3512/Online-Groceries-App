@@ -1,3 +1,3 @@
-class Appasset {
-  static String appIconlogo='lib/controller/constans/app_assets/8140 1.png';
+class Appassets {
+  static String bananaImage = "assets/banana.png";
 }
