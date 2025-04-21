@@ -16,19 +16,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List <ExclusiveOfferModel> exclusiveOfferList= [
     ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
-    ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
-    ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
-    ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
-    ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
-    ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
-    ExclusiveOfferModel(imagePath: Appassets.bananaImage,
-        mainText: "Organic Bananas", subText: "7pcs Prices", priceText: "4.99"),
+        mainText: "Organic Bananas", subText: "7pcs, Price", priceText: "4.99"),
+    ExclusiveOfferModel(imagePath: Appassets.appleImage,
+        mainText: "Red Apple", subText: "1kg, Price", priceText: "4.99"),
   ];
   @override
   Widget build(BuildContext context) {
