@@ -1,9 +1,9 @@
-class BestSellingModel {
+class GroceriesModel {
   String? imagePath;
   String? mainText;
   String? subText;
   String? priceText;
 
-  BestSellingModel({ required this.imagePath, required this.mainText,
+  GroceriesModel({ required  this.imagePath, required this.mainText,
   required this.subText, required this.priceText});
 }
