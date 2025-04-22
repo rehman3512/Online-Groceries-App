@@ -24,23 +24,23 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: App_Colors.blackcolor,
-      selectedItemColor: App_Colors.primarycolor,
-      currentIndex: selectedindex,
-      onTap: (index){
+        selectedItemColor: App_Colors.primarycolor,
+        currentIndex: selectedindex,
+        onTap: (index){
           selectedindex=index;
           setState(() {
-            
+
           });
-      },
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.shopify_sharp),
-          label: "shop"),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
-      ],
+        },
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopify_sharp),
+              label: "shop"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+        ],
       ),
       body: pages.elementAt(selectedindex),
     );
