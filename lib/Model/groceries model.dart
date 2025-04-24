@@ -5,5 +5,5 @@ class GroceriesModel {
   String? priceText;
 
   GroceriesModel({ required  this.imagePath, required this.mainText,
-  required this.subText, required this.priceText});
+    required this.subText, required this.priceText});
 }
