@@ -15,14 +15,14 @@ class _GridClassState extends State<GridClass> {
       body: GridView.builder(
           gridDelegate: (SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,crossAxisSpacing: 10,mainAxisSpacing: 10,
-          childAspectRatio: 0.7)),
+              childAspectRatio: 0.7)),
           itemCount: 10,
           itemBuilder: (contetext,index){
             return Container(height: 200,width: 200,
-            decoration: BoxDecoration(
-              color: Colors.green.shade100,
-              border: Border.all(color: Colors.purpleAccent)
-            ),);
+              decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  border: Border.all(color: Colors.purpleAccent)
+              ),);
             //   Card(child: Column(children: [
             //   Text('1'),
             //   Text('2'),
