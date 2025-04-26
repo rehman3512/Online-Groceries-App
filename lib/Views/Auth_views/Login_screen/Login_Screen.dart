@@ -49,18 +49,21 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Divider(),
             SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text("Password",style: TextStyle(color: App_Colors.greycolor,
-                  fontSize: 16,fontWeight: FontWeight.w600),),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 20),
+            //   child: Text("Password",style: TextStyle(color: App_Colors.greycolor,
+            //       fontSize: 16,fontWeight: FontWeight.w600),),
+            // ),
           //  SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(children: [
-                Text(".........",style: TextStyle(
-                    color: App_Colors.blackcolor, fontSize: 40,
-                    fontWeight: FontWeight.w600),),
+                TextFormField(
+                  decoration: InputDecoration(
+
+                    labelText: "enter your password",
+                  ),
+                ),
                 Spacer(),
                 Icon(Icons.remove_red_eye_sharp,color: App_Colors.greycolor,),
               ],),
