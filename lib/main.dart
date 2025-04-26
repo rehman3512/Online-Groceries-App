@@ -12,6 +12,7 @@ import 'package:online_groceries_app/Views/Starting_screen/Onboarding_screen/onb
 import 'package:online_groceries_app/Views/Starting_screen/Splash_screen/splash_Screen.dart';
 import 'package:online_groceries_app/Views/Auth_views/Login_screen/Login_Screen.dart';
 import 'package:online_groceries_app/Views/gridview.dart';
+import 'package:online_groceries_app/password.dart';
 
 void main()
 {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GridClass(),
+      home: Password(),
     );
   }
 }
