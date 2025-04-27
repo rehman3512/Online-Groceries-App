@@ -49,12 +49,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Divider(),
             SizedBox(height: 30,),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 20),
-            //   child: Text("Password",style: TextStyle(color: App_Colors.greycolor,
-            //       fontSize: 16,fontWeight: FontWeight.w600),),
-            // ),
-          //  SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text("Password",style: TextStyle(color: App_Colors.greycolor,
+                  fontSize: 16,fontWeight: FontWeight.w600),),
+            ),
+           SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(children: [

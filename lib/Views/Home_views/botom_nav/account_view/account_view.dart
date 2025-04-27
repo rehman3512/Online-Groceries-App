@@ -51,10 +51,12 @@ class _AccountViewState extends State<AccountView> {
           }, icon: Icon(Icons.person)), label: "Account"),
         ],
       ),
-      backgroundColor: Colors.cyan,
+      backgroundColor: App_Colors.whitecolor,
       body: ListView(children: [
         pages.elementAt(selectedindex),
-        ListTile( title: Row(
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons.shopping_bag_outlined),
             SizedBox(width: 10,),
@@ -62,7 +64,9 @@ class _AccountViewState extends State<AccountView> {
           ],),
           trailing: Icon(Icons.chevron_right),
         ),
-        ListTile( title: Row(
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons.chrome_reader_mode_sharp),
             SizedBox(width: 10,),
@@ -70,7 +74,9 @@ class _AccountViewState extends State<AccountView> {
           ],),
           trailing: Icon(Icons.chevron_right),
         ),
-        ListTile( title: Row(
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons.location_on_outlined),
             SizedBox(width: 10,),
@@ -78,7 +84,9 @@ class _AccountViewState extends State<AccountView> {
           ],),
           trailing: Icon(Icons.chevron_right),
         ),
-        ListTile( title: Row(
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons.payment),
             SizedBox(width: 10,),
@@ -86,34 +94,59 @@ class _AccountViewState extends State<AccountView> {
           ],),
           trailing: Icon(Icons.chevron_right),
         ),
-        ListTile( title: Row(
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons. discount_outlined),
             SizedBox(width: 10,),
             Text("Promo Card")
           ],),
           trailing: Icon(Icons.chevron_right),
-        ), ListTile( title: Row(
+        ),
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons.notifications),
             SizedBox(width: 10,),
             Text("Notification")
           ],),
           trailing: Icon(Icons.chevron_right),
-        ), ListTile( title: Row(
+        ),
+        Divider(),
+        ListTile( onTap: (){},
+          title: Row(
           children: [
             Icon(Icons.help_outline),
             SizedBox(width: 10,),
             Text("Help")
           ],),
           trailing: Icon(Icons.chevron_right),
-        ), ListTile( title: Row(
+        ),
+        Divider(),
+        ListTile( onTap: (){},title: Row(
           children: [
             Icon(Icons.report_gmailerrorred),
             SizedBox(width: 10,),
             Text("About")
           ],),
           trailing: Icon(Icons.chevron_right),
+        ),
+        Divider(),
+        Container( height: 70,width: 250,
+          margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: App_Colors.GreyColor,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: App_Colors.GreyColor),
+        ), child: Row(children: [
+          SizedBox(width: 30,),
+          Icon(Icons.logout,color: App_Colors.primarycolor,),
+            SizedBox(width: 100,),
+            Text("Log Out",style: TextStyle(
+                color: App_Colors.primarycolor),)
+          ],),
         ),
       ],),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:online_groceries_app/Views/Auth_views/Login_screen/Login_Screen.dart';
+import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 
 class Location_screen extends StatefulWidget {
@@ -63,7 +64,7 @@ class _Location_screenState extends State<Location_screen> {
             Divider(),
             SizedBox(height: 30,),
             InkWell( onTap: (){
-              Get.to(()=>LoginScreen());
+              Get.to(()=>HomeScreen());
             },
               child: Container( height: 55,
                 margin: EdgeInsets.symmetric(horizontal: 30),

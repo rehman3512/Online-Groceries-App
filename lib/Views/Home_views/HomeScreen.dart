@@ -109,121 +109,121 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding( padding: EdgeInsets.symmetric( horizontal: 20),
               child: Image.asset("assets/homebanner.png"),
             ),
-            // SizedBox( height: 10),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: EdgeInsets.symmetric(horizontal: 20),
-            //       child: Text("Exclusive Offer",style: TextStyle(
-            //           color: App_Colors.blackcolor,fontSize: 26,
-            //           fontWeight: FontWeight.w400),),
-            //     ),
-            //     Spacer(),
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 20),
-            //       child: TextButton(onPressed:(){},child: Text("See all",
-            //         style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
-            //             fontWeight: FontWeight.w400),),
-            //       ),),
-            //   ],),
-            // Expanded(
-            //   child: ListView.builder(itemCount: exclusiveOfferList.length,
-            //       scrollDirection: Axis.horizontal,
-            //       itemBuilder: (context,index){
-            //         return Container(
-            //           padding: EdgeInsets.all(12),
-            //           margin: EdgeInsets.all(5),
-            //           decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(15),
-            //               border: Border.all()
-            //           ),
-            //           child: Column(
-            //             children: [
-            //               Image.asset(exclusiveOfferList[index].imagePath.toString()),
-            //               Text(exclusiveOfferList[index].mainText.toString()),
-            //               Text(exclusiveOfferList[index].subText.toString()),
-            //               Text(exclusiveOfferList[index].priceText.toString()),
-            //
-            //             ],),
-            //         );
-            //       }),
-            // ),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: EdgeInsets.symmetric(horizontal: 20),
-            //       child: Text("Best Selling",style: TextStyle(
-            //           color: App_Colors.blackcolor,fontSize: 26,
-            //           fontWeight: FontWeight.w400),),
-            //     ),
-            //     Spacer(),
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 20),
-            //       child: TextButton(onPressed:(){},child: Text("See all",
-            //         style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
-            //             fontWeight: FontWeight.w400),),
-            //       ),),
-            //   ],),
-            // Expanded(
-            //   child: ListView.builder(itemCount: bestSellingModelList.length,
-            //       scrollDirection: Axis.horizontal,
-            //       itemBuilder: (context,index){
-            //         return Container(
-            //           padding: EdgeInsets.all(12),
-            //           margin: EdgeInsets.all(5),
-            //           decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(15),
-            //               border: Border.all()
-            //           ),
-            //           child: Column(
-            //             children: [
-            //               Image.asset(bestSellingModelList[index].imagePath.toString()),
-            //               Text(bestSellingModelList[index].mainText.toString()),
-            //               Text(bestSellingModelList[index].subText.toString()),
-            //               Text(bestSellingModelList[index].priceText.toString()),
-            //
-            //             ],),
-            //         );
-            //       }),
-            // ),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: EdgeInsets.symmetric(horizontal: 20),
-            //       child: Text("Groceries",style: TextStyle(
-            //           color: App_Colors.blackcolor,fontSize: 26,
-            //           fontWeight: FontWeight.w400),),
-            //     ),
-            //     Spacer(),
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 20),
-            //       child: TextButton(onPressed:(){},child: Text("See all",
-            //         style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
-            //             fontWeight: FontWeight.w400),),
-            //       ),),
-            //   ],),
-            // Expanded(
-            //   child: ListView.builder(itemCount: groceriesModelList.length,
-            //       scrollDirection: Axis.horizontal,
-            //       itemBuilder: (context,index){
-            //         return Container(
-            //           padding: EdgeInsets.all(12),
-            //           margin: EdgeInsets.all(5),
-            //           decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(15),
-            //               border: Border.all()
-            //           ),
-            //           child: Column(
-            //             children: [
-            //               Image.asset(groceriesModelList[index].imagePath.toString()),
-            //               Text(groceriesModelList[index].mainText.toString()),
-            //               Text(groceriesModelList[index].subText.toString()),
-            //               Text(groceriesModelList[index].priceText.toString()),
-            //
-            //             ],),
-            //         );
-            //       }),
-            // ),
+            SizedBox( height: 10),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text("Exclusive Offer",style: TextStyle(
+                      color: App_Colors.blackcolor,fontSize: 26,
+                      fontWeight: FontWeight.w400),),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextButton(onPressed:(){},child: Text("See all",
+                    style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
+                        fontWeight: FontWeight.w400),),
+                  ),),
+              ],),
+            Expanded(
+              child: ListView.builder(itemCount: exclusiveOfferList.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context,index){
+                    return Container(
+                      padding: EdgeInsets.all(12),
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all()
+                      ),
+                      child: Column(
+                        children: [
+                          Image.asset(exclusiveOfferList[index].imagePath.toString()),
+                          Text(exclusiveOfferList[index].mainText.toString()),
+                          Text(exclusiveOfferList[index].subText.toString()),
+                          Text(exclusiveOfferList[index].priceText.toString()),
+
+                        ],),
+                    );
+                  }),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text("Best Selling",style: TextStyle(
+                      color: App_Colors.blackcolor,fontSize: 26,
+                      fontWeight: FontWeight.w400),),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextButton(onPressed:(){},child: Text("See all",
+                    style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
+                        fontWeight: FontWeight.w400),),
+                  ),),
+              ],),
+            Expanded(
+              child: ListView.builder(itemCount: bestSellingModelList.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context,index){
+                    return Container(
+                      padding: EdgeInsets.all(12),
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all()
+                      ),
+                      child: Column(
+                        children: [
+                          Image.asset(bestSellingModelList[index].imagePath.toString()),
+                          Text(bestSellingModelList[index].mainText.toString()),
+                          Text(bestSellingModelList[index].subText.toString()),
+                          Text(bestSellingModelList[index].priceText.toString()),
+
+                        ],),
+                    );
+                  }),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text("Groceries",style: TextStyle(
+                      color: App_Colors.blackcolor,fontSize: 26,
+                      fontWeight: FontWeight.w400),),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextButton(onPressed:(){},child: Text("See all",
+                    style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
+                        fontWeight: FontWeight.w400),),
+                  ),),
+              ],),
+            Expanded(
+              child: ListView.builder(itemCount: groceriesModelList.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context,index){
+                    return Container(
+                      padding: EdgeInsets.all(12),
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all()
+                      ),
+                      child: Column(
+                        children: [
+                          Image.asset(groceriesModelList[index].imagePath.toString()),
+                          Text(groceriesModelList[index].mainText.toString()),
+                          Text(groceriesModelList[index].subText.toString()),
+                          Text(groceriesModelList[index].priceText.toString()),
+
+                        ],),
+                    );
+                  }),
+            ),
           ],)
     );
   }

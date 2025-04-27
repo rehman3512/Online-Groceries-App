@@ -9,7 +9,7 @@ class Appassets {
   static String cookingOilImage = "assets/cookingOil.png";
   static String meatFishImage = "assets/meatFish.png";
   static String bakerySnacksImage = "assets/bakerySnacks.png";
-  static String dairyEggsImage = "assets/dairyEggs.png";
+  static String dairyEggsImage = "assets/dairyeggs.png";
   static String beveragesImage = "assets/beverages.png";
   static String dietCokeCanImage = "assets/coke.png";
   static String spriteCanImage = "assets/sprite.png";
