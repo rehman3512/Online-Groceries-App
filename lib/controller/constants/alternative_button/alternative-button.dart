@@ -11,7 +11,8 @@ class AlternativeButton extends StatelessWidget {
     return Container(height: 65,width: 280,
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(19),
       color: App_Colors.primarycolor,
-    ),child: Center(child: ,)
+    ),child: Center(child: TextWidget(text: text, fontsize: 10,
+            fontcolor: App_Colors.primarycolor, fontweight: FontWeight.w400),)
     );
   }
 }

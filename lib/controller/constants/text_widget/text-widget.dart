@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TextWidget extends StatelessWidget {
-  String text;
-  Color fontweight;
-  double fontsize;
-  Color fontcolor;
-  TextWidget({super.key,required this.text,required this.fontsize,
+  final String text;
+  final double fontsize;
+  final Color fontcolor;
+  final FontWeight? fontweight;
+  const TextWidget({super.key,required this.text,required this.fontsize,
     required this.fontcolor,required this.fontweight});
 
   @override
