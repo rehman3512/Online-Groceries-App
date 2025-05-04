@@ -1,4 +1,7 @@
 class Appassets {
+  static String homeLogoImage = "assets/homelogo.png";
+  static String homeBannerImage = "assets/homebanner.png";
+  static String redCarrotImage = "assets/red_carrot.png";
   static String bananaImage = "assets/banana.png";
   static String appleImage = "assets/apples.png";
   static String bellPaperImage = "assets/shimlamirch.png";

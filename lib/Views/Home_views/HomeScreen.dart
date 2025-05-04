@@ -10,6 +10,7 @@ import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/fa
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
+import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -75,7 +76,270 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: SingleChildScrollView(
-          child:
+          child:Column(
+            children: [
+              Align( alignment: Alignment.center,
+                  child: Image.asset(Appassets.homeLogoImage)),
+          SizedBox(height: 10,),
+          Row( mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+                  Icon(Icons.location_on), SizedBox(width: 10,),
+                  Text("Dhaka,Banassre")],),
+              Container(height: 50, margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: App_Colors.GreyColor,
+                  border: Border.all(color: App_Colors.GreyColor)
+                ),child: TextFormField(
+                  decoration: InputDecoration( border: InputBorder.none,
+                  prefixIcon: Icon(Icons.search),hintText: "Search Store")
+                ),),
+              Image.asset(Appassets.homeBannerImage),
+              SizedBox(height: 10,),
+              Row(children: [
+                SizedBox(width: 20,),
+                Text("Exclusive Offer",style: TextStyle( fontWeight: FontWeight.w600,
+                color: App_Colors.blackcolor, fontSize: 24,),),
+                Spacer(),
+                TextButton(onPressed: (){}, child: Text("See All",style: TextStyle(
+                  color: App_Colors.primarycolor, fontSize: 16,fontWeight: FontWeight.w600,
+                ),
+                )),
+                SizedBox(width: 20,),
+              ],),
+              SizedBox(height: 20,),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 17),
+              child: SingleChildScrollView( scrollDirection: Axis.horizontal,
+                child: Row(children: [
+                  InkWell( onTap: (){},
+                  child: Container(height: 220,width: 150,
+                    decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                    borderRadius: BorderRadius.circular(18),),
+                    child: Column(children: [
+                      Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                      child: Image.asset(Appassets.bananaImage),),
+                      Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                        child: TextWidget(text: "Organic Banana", fontsize: 16,
+                            fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                      Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                          child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                              fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                    ],),
+                  ),),
+                  SizedBox(width: 10,),
+                  InkWell( onTap: (){},
+                    child: Container(height: 220,width: 150,
+                      decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                        borderRadius: BorderRadius.circular(18),),
+                      child: Column(children: [
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                          child: Image.asset(Appassets.appleImage),),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                            child: TextWidget(text: "Red Apple", fontsize: 16,
+                                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                            child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                      ],),
+                    ),),
+                  SizedBox(width: 10,),
+                  InkWell( onTap: (){},
+                    child: Container(height: 220,width: 150,
+                      decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                        borderRadius: BorderRadius.circular(18),),
+                      child: Column(children: [
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                          child: Image.asset(Appassets.bananaImage),),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                            child: TextWidget(text: "Organic Banana", fontsize: 16,
+                                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                            child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                      ],),
+                    ),),
+                  SizedBox(width: 10,),
+                  InkWell( onTap: (){},
+                    child: Container(height: 220,width: 150,
+                      decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                        borderRadius: BorderRadius.circular(18),),
+                      child: Column(children: [
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                          child: Image.asset(Appassets.appleImage),),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                            child: TextWidget(text: "Red Apple", fontsize: 16,
+                                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                            child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                      ],),
+                    ),)
+                ],),
+              ),),
+              SizedBox(height: 20,),
+              Row(children: [
+                SizedBox(width: 20,),
+                Text("Best Selling",style: TextStyle( fontWeight: FontWeight.w600,
+                  color: App_Colors.blackcolor, fontSize: 24,),),
+                Spacer(),
+                TextButton(onPressed: (){}, child: Text("See All",style: TextStyle(
+                  color: App_Colors.primarycolor, fontSize: 16,fontWeight: FontWeight.w600,
+                ),
+                )),
+                SizedBox(width: 20,),
+              ],),
+              SizedBox(height: 20,),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 17),
+                child: SingleChildScrollView( scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.bellPaperImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Bell Paper", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                    SizedBox(height: 10,),
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.gingerImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Ginger", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                    SizedBox(height: 10,),
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.bellPaperImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Bell Paper", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                    SizedBox(height: 10,),
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.gingerImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Ginger", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                  ],),
+                ),),
+              SizedBox(height: 20,),
+              Row(children: [
+                SizedBox(width: 20,),
+                Text("Groceries",style: TextStyle( fontWeight: FontWeight.w600,
+                  color: App_Colors.blackcolor, fontSize: 24,),),
+                Spacer(),
+                TextButton(onPressed: (){}, child: Text("See All",style: TextStyle(
+                  color: App_Colors.primarycolor, fontSize: 16,fontWeight: FontWeight.w600,
+                ),
+                )),
+                SizedBox(width: 20,),
+              ],),
+              SizedBox(height: 20,),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 17),
+                child: SingleChildScrollView( scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.beefImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Beef Bone", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                    SizedBox(height: 10,),
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.chickenImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Broller Chicken", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                    SizedBox(height: 10,),
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.beefImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Beef Bone", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                    SizedBox(height: 10,),
+                    InkWell( onTap: (){},
+                      child: Container(height: 220,width: 150,
+                        decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
+                          borderRadius: BorderRadius.circular(18),),
+                        child: Column(children: [
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                            child: Image.asset(Appassets.chickenImage),),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "Broller Chicken", fontsize: 16,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: TextWidget(text: "7pcs,priceg", fontsize: 14,
+                                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)),
+                        ],),
+                      ),),
+                  ],),
+                ),)
+
+          ],),
         )
     );
   }
@@ -84,154 +348,154 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-pages.elementAt(selectedindex),
-SizedBox(height: 60,),
-Center(child: Image.asset("assets/homelogo.png"),),
-SizedBox(height: 10),
-Row( mainAxisAlignment: MainAxisAlignment.center,
-children: [ Icon(Icons.location_on),
-Text("Dhaka Banasara",style: TextStyle(
-color: App_Colors.blackcolor,fontSize: 16,
-fontWeight: FontWeight.w400),),
-],),
-SizedBox(height: 20),
-Container(
-height: 50,margin: EdgeInsets.symmetric(horizontal: 20),
-decoration: BoxDecoration(
-borderRadius: BorderRadius.circular(12),
-color: App_Colors.whitegreycolor,
-),child: Center(
-child: TextFormField(
-decoration: InputDecoration(
-border: InputBorder.none,
-prefixIcon: Icon(Icons.search),
-hintText: "Search Store",hintStyle: TextStyle(
-fontWeight: FontWeight.w400,fontSize: 16,
-color: App_Colors.greycolor,
-),
-),),
-),
-),
-SizedBox( height: 20,),
-Padding( padding: EdgeInsets.symmetric( horizontal: 20),
-child: Image.asset("assets/homebanner.png"),
-),
-SizedBox( height: 10),
-Row(
-children: [
-Padding(
-padding: EdgeInsets.symmetric(horizontal: 20),
-child: Text("Exclusive Offer",style: TextStyle(
-color: App_Colors.blackcolor,fontSize: 26,
-fontWeight: FontWeight.w400),),
-),
-Spacer(),
-Padding(
-padding: const EdgeInsets.symmetric(horizontal: 20),
-child: TextButton(onPressed:(){},child: Text("See all",
-style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
-fontWeight: FontWeight.w400),),
-),),
-],),
-Expanded(
-child: ListView.builder(itemCount: exclusiveOfferList.length,
-scrollDirection: Axis.horizontal,
-itemBuilder: (context,index){
-return Container(
-padding: EdgeInsets.all(12),
-margin: EdgeInsets.all(5),
-decoration: BoxDecoration(
-borderRadius: BorderRadius.circular(15),
-border: Border.all()
-),
-child: Column(
-children: [
-Image.asset(exclusiveOfferList[index].imagePath.toString()),
-Text(exclusiveOfferList[index].mainText.toString()),
-Text(exclusiveOfferList[index].subText.toString()),
-Text(exclusiveOfferList[index].priceText.toString()),
-
-],),
-);
-}),
-),
-Row(
-children: [
-Padding(
-padding: EdgeInsets.symmetric(horizontal: 20),
-child: Text("Best Selling",style: TextStyle(
-color: App_Colors.blackcolor,fontSize: 26,
-fontWeight: FontWeight.w400),),
-),
-Spacer(),
-Padding(
-padding: const EdgeInsets.symmetric(horizontal: 20),
-child: TextButton(onPressed:(){},child: Text("See all",
-style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
-fontWeight: FontWeight.w400),),
-),),
-],),
-Expanded(
-child: ListView.builder(itemCount: bestSellingModelList.length,
-scrollDirection: Axis.horizontal,
-itemBuilder: (context,index){
-return Container(
-padding: EdgeInsets.all(12),
-margin: EdgeInsets.all(5),
-decoration: BoxDecoration(
-borderRadius: BorderRadius.circular(15),
-border: Border.all()
-),
-child: Column(
-children: [
-Image.asset(bestSellingModelList[index].imagePath.toString()),
-Text(bestSellingModelList[index].mainText.toString()),
-Text(bestSellingModelList[index].subText.toString()),
-Text(bestSellingModelList[index].priceText.toString()),
-
-],),
-);
-}),
-),
-Row(
-children: [
-Padding(
-padding: EdgeInsets.symmetric(horizontal: 20),
-child: Text("Groceries",style: TextStyle(
-color: App_Colors.blackcolor,fontSize: 26,
-fontWeight: FontWeight.w400),),
-),
-Spacer(),
-Padding(
-padding: const EdgeInsets.symmetric(horizontal: 20),
-child: TextButton(onPressed:(){},child: Text("See all",
-style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
-fontWeight: FontWeight.w400),),
-),),
-],),
-Expanded(
-child: ListView.builder(itemCount: groceriesModelList.length,
-scrollDirection: Axis.horizontal,
-itemBuilder: (context,index){
-return Container(
-padding: EdgeInsets.all(12),
-margin: EdgeInsets.all(5),
-decoration: BoxDecoration(
-borderRadius: BorderRadius.circular(15),
-border: Border.all()
-),
-child: Column(
-children: [
-Image.asset(groceriesModelList[index].imagePath.toString()),
-Text(groceriesModelList[index].mainText.toString()),
-Text(groceriesModelList[index].subText.toString()),
-Text(groceriesModelList[index].priceText.toString()),
-
-],),
-);
-}),
-),
-],),
+// Column(
+// crossAxisAlignment: CrossAxisAlignment.start,
+// children: [
+// pages.elementAt(selectedindex),
+// SizedBox(height: 60,),
+// Center(child: Image.asset("assets/homelogo.png"),),
+// SizedBox(height: 10),
+// Row( mainAxisAlignment: MainAxisAlignment.center,
+// children: [ Icon(Icons.location_on),
+// Text("Dhaka Banasara",style: TextStyle(
+// color: App_Colors.blackcolor,fontSize: 16,
+// fontWeight: FontWeight.w400),),
+// ],),
+// SizedBox(height: 20),
+// Container(
+// height: 50,margin: EdgeInsets.symmetric(horizontal: 20),
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(12),
+// color: App_Colors.whitegreycolor,
+// ),child: Center(
+// child: TextFormField(
+// decoration: InputDecoration(
+// border: InputBorder.none,
+// prefixIcon: Icon(Icons.search),
+// hintText: "Search Store",hintStyle: TextStyle(
+// fontWeight: FontWeight.w400,fontSize: 16,
+// color: App_Colors.greycolor,
+// ),
+// ),),
+// ),
+// ),
+// SizedBox( height: 20,),
+// Padding( padding: EdgeInsets.symmetric( horizontal: 20),
+// child: Image.asset("assets/homebanner.png"),
+// ),
+// SizedBox( height: 10),
+// Row(
+// children: [
+// Padding(
+// padding: EdgeInsets.symmetric(horizontal: 20),
+// child: Text("Exclusive Offer",style: TextStyle(
+// color: App_Colors.blackcolor,fontSize: 26,
+// fontWeight: FontWeight.w400),),
+// ),
+// Spacer(),
+// Padding(
+// padding: const EdgeInsets.symmetric(horizontal: 20),
+// child: TextButton(onPressed:(){},child: Text("See all",
+// style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
+// fontWeight: FontWeight.w400),),
+// ),),
+// ],),
+// Expanded(
+// child: ListView.builder(itemCount: exclusiveOfferList.length,
+// scrollDirection: Axis.horizontal,
+// itemBuilder: (context,index){
+// return Container(
+// padding: EdgeInsets.all(12),
+// margin: EdgeInsets.all(5),
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all()
+// ),
+// child: Column(
+// children: [
+// Image.asset(exclusiveOfferList[index].imagePath.toString()),
+// Text(exclusiveOfferList[index].mainText.toString()),
+// Text(exclusiveOfferList[index].subText.toString()),
+// Text(exclusiveOfferList[index].priceText.toString()),
+//
+// ],),
+// );
+// }),
+// ),
+// Row(
+// children: [
+// Padding(
+// padding: EdgeInsets.symmetric(horizontal: 20),
+// child: Text("Best Selling",style: TextStyle(
+// color: App_Colors.blackcolor,fontSize: 26,
+// fontWeight: FontWeight.w400),),
+// ),
+// Spacer(),
+// Padding(
+// padding: const EdgeInsets.symmetric(horizontal: 20),
+// child: TextButton(onPressed:(){},child: Text("See all",
+// style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
+// fontWeight: FontWeight.w400),),
+// ),),
+// ],),
+// Expanded(
+// child: ListView.builder(itemCount: bestSellingModelList.length,
+// scrollDirection: Axis.horizontal,
+// itemBuilder: (context,index){
+// return Container(
+// padding: EdgeInsets.all(12),
+// margin: EdgeInsets.all(5),
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all()
+// ),
+// child: Column(
+// children: [
+// Image.asset(bestSellingModelList[index].imagePath.toString()),
+// Text(bestSellingModelList[index].mainText.toString()),
+// Text(bestSellingModelList[index].subText.toString()),
+// Text(bestSellingModelList[index].priceText.toString()),
+//
+// ],),
+// );
+// }),
+// ),
+// Row(
+// children: [
+// Padding(
+// padding: EdgeInsets.symmetric(horizontal: 20),
+// child: Text("Groceries",style: TextStyle(
+// color: App_Colors.blackcolor,fontSize: 26,
+// fontWeight: FontWeight.w400),),
+// ),
+// Spacer(),
+// Padding(
+// padding: const EdgeInsets.symmetric(horizontal: 20),
+// child: TextButton(onPressed:(){},child: Text("See all",
+// style: TextStyle(color: App_Colors.primarycolor,fontSize: 16,
+// fontWeight: FontWeight.w400),),
+// ),),
+// ],),
+// Expanded(
+// child: ListView.builder(itemCount: groceriesModelList.length,
+// scrollDirection: Axis.horizontal,
+// itemBuilder: (context,index){
+// return Container(
+// padding: EdgeInsets.all(12),
+// margin: EdgeInsets.all(5),
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all()
+// ),
+// child: Column(
+// children: [
+// Image.asset(groceriesModelList[index].imagePath.toString()),
+// Text(groceriesModelList[index].mainText.toString()),
+// Text(groceriesModelList[index].subText.toString()),
+// Text(groceriesModelList[index].priceText.toString()),
+//
+// ],),
+// );
+// }),
+// ),
+// ],),
