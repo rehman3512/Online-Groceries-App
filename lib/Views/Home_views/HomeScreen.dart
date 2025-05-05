@@ -8,6 +8,7 @@ import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_v
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
+import 'package:online_groceries_app/Views/Home_views/product_view/product-view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
 import 'package:online_groceries_app/controller/constants/smallButton/small-Button.dart';
@@ -124,7 +125,15 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 250,
                 child: ListView.builder(itemCount: exclusiveOfferList.length,
                     scrollDirection: Axis.horizontal,itemBuilder:(context,index){
-                      return InkWell( onTap: (){},
+                      return InkWell( onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context)=>ProductView(
+                                image: exclusiveOfferList[index].imagePath.toString(),
+                                mainText: exclusiveOfferList[index].mainText.toString(),
+                                priceText: exclusiveOfferList[index].priceText.toString(),
+                                description: exclusiveOfferList[index].subText.toString()))
+                        );
+                      },
                         child: Container(height: 220,width: 150,margin: EdgeInsets.symmetric(
                             vertical: 10,horizontal: 5),
                           padding: EdgeInsets.all(5),
@@ -161,7 +170,14 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 250,
                 child: ListView.builder(itemCount: bestSellingModelList.length,
                     scrollDirection: Axis.horizontal, itemBuilder: (context,index){
-                      return InkWell( onTap: (){},
+                      return InkWell( onTap: (){
+                        Get.to(()=>ProductView(
+                            image: bestSellingModelList[index].imagePath.toString(),
+                            mainText: bestSellingModelList[index].mainText.toString(),
+                            priceText: bestSellingModelList[index].priceText.toString(),
+                            description: bestSellingModelList[index].subText.toString(),)
+                        );
+                      },
                         child: Container(height: 220,width: 150,
                           decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
                             borderRadius: BorderRadius.circular(18),),
@@ -195,7 +211,14 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 250,
               child: ListView.builder(itemCount: groceriesModelList.length,
                   scrollDirection: Axis.horizontal,itemBuilder: (context,index){
-                return InkWell( onTap: (){},
+                return InkWell( onTap: (){
+                  Get.to(()=>ProductView(
+                      image: groceriesModelList[index].imagePath.toString(),
+                      mainText: groceriesModelList[index].mainText.toString(),
+                      priceText: groceriesModelList[index].priceText.toString(),
+                      description: groceriesModelList[index].subText.toString())
+                  );
+                },
                   child: Container(height: 220,width: 150,
                     decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
                       borderRadius: BorderRadius.circular(18),),
