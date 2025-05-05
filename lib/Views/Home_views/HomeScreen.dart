@@ -93,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SingleChildScrollView(
           child:Column(
             children: [
+              SizedBox(height: 40,),
               Align( alignment: Alignment.center,
                   child: Image.asset(Appassets.homeLogoImage)),
           SizedBox(height: 10,),
@@ -112,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Image.asset(Appassets.homeBannerImage),
               SizedBox(height: 10,),
               Row(children: [
-                SizedBox(width: 20,),
+                SizedBox(width: 30,),
                 Text("Exclusive Offer",style: TextStyle( fontWeight: FontWeight.w600,
                 color: App_Colors.blackcolor, fontSize: 24,),),
                 Spacer(),
@@ -130,12 +131,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context)=>ProductView(
                                 image: exclusiveOfferList[index].imagePath.toString(),
                                 mainText: exclusiveOfferList[index].mainText.toString(),
+                                subText: exclusiveOfferList[index].subText.toString(),
                                 priceText: exclusiveOfferList[index].priceText.toString(),
                                 description: exclusiveOfferList[index].subText.toString()))
                         );
                       },
                         child: Container(height: 220,width: 150,margin: EdgeInsets.symmetric(
-                            vertical: 10,horizontal: 5),
+                            vertical: 15,horizontal: 5),
                           padding: EdgeInsets.all(5),
                           decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
                             borderRadius: BorderRadius.circular(18),),
@@ -149,13 +151,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontsize: 14, fontcolor: App_Colors.blackcolor,
                                 fontweight: FontWeight.w400),
                             SizedBox(height: 15,),
-                            Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+                            Padding(padding: EdgeInsets.symmetric(horizontal: 8),
                               child: smallButton(text: "\$4.99"),)
                           ],),
                         ),);
                     } ),
               ),
-              SizedBox(height: 20,),
+
               Row(children: [
                 SizedBox(width: 20,),
                 Text("Best Selling",style: TextStyle( fontWeight: FontWeight.w600,
@@ -174,29 +176,33 @@ class _HomeScreenState extends State<HomeScreen> {
                         Get.to(()=>ProductView(
                             image: bestSellingModelList[index].imagePath.toString(),
                             mainText: bestSellingModelList[index].mainText.toString(),
+                            subText: bestSellingModelList[index].subText.toString(),
                             priceText: bestSellingModelList[index].priceText.toString(),
                             description: bestSellingModelList[index].subText.toString(),)
                         );
                       },
                         child: Container(height: 220,width: 150,
+                          margin: EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+                          padding: EdgeInsets.symmetric(horizontal: 5),
                           decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
                             borderRadius: BorderRadius.circular(18),),
                           child: Column(children: [
                             Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                               child: Image.asset(bestSellingModelList[index].imagePath.toString()),),
-                            Padding(padding: EdgeInsets.symmetric(horizontal: 5),
-                                child: TextWidget(text: bestSellingModelList[index].mainText.toString(),
-                                    fontsize: 16, fontcolor: App_Colors.blackcolor,
-                                    fontweight: FontWeight.w400)),
-                            Padding(padding: EdgeInsets.symmetric(horizontal: 5),
-                                child: TextWidget(text: bestSellingModelList[index].subText.toString(),
-                                    fontsize: 14, fontcolor: App_Colors.blackcolor,
-                                    fontweight: FontWeight.w400)),
+                            TextWidget(text: bestSellingModelList[index].mainText.toString(),
+                                fontsize: 16, fontcolor: App_Colors.blackcolor,
+                                fontweight: FontWeight.w400),
+                            TextWidget(text: bestSellingModelList[index].subText.toString(),
+                                fontsize: 14, fontcolor: App_Colors.blackcolor,
+                                fontweight: FontWeight.w400),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: smallButton(text: "\$4.99"),
+                            ),
                           ],),
                         ),);
                     }),
               ),
-              SizedBox(height: 20,),
               Row(children: [
                 SizedBox(width: 20,),
                 Text("Groceries",style: TextStyle( fontWeight: FontWeight.w600,
@@ -215,24 +221,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.to(()=>ProductView(
                       image: groceriesModelList[index].imagePath.toString(),
                       mainText: groceriesModelList[index].mainText.toString(),
+                      subText: groceriesModelList[index].subText.toString(),
                       priceText: groceriesModelList[index].priceText.toString(),
                       description: groceriesModelList[index].subText.toString())
                   );
                 },
                   child: Container(height: 220,width: 150,
+                    margin: EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+                    padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(border: Border.all(color: App_Colors.GreyColor),
                       borderRadius: BorderRadius.circular(18),),
                     child: Column(children: [
                       Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                         child: Image.asset(groceriesModelList[index].imagePath.toString()),),
-                      Padding(padding: EdgeInsets.symmetric(horizontal: 5),
-                          child: TextWidget(text: groceriesModelList[index].mainText.toString(),
-                              fontsize: 16, fontcolor: App_Colors.blackcolor,
-                              fontweight: FontWeight.w400)),
-                      Padding(padding: EdgeInsets.symmetric(horizontal: 5),
-                          child: TextWidget(text: groceriesModelList[index].subText.toString(),
-                              fontsize: 14, fontcolor: App_Colors.blackcolor,
-                              fontweight: FontWeight.w400)),
+                      TextWidget(text: groceriesModelList[index].mainText.toString(),
+                          fontsize: 16, fontcolor: App_Colors.blackcolor,
+                          fontweight: FontWeight.w400),
+                      TextWidget(text: groceriesModelList[index].subText.toString(),
+                          fontsize: 14, fontcolor: App_Colors.blackcolor,
+                          fontweight: FontWeight.w400),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: smallButton(text: "\$4.99"),
+                      )
                     ],),
                   ),);
               }),),
