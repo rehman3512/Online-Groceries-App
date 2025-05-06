@@ -12,7 +12,7 @@ class AlternativeButton extends StatelessWidget {
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(19),
       color: App_Colors.primarycolor,
     ),child: Center(child: TextWidget(text: text, fontsize: 10,
-            fontcolor: App_Colors.primarycolor, fontweight: FontWeight.w400),)
+            fontcolor: App_Colors.whitecolor, fontweight: FontWeight.w400),)
     );
   }
 }
