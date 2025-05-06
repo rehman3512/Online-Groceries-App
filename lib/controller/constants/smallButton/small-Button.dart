@@ -13,9 +13,9 @@ class smallButton extends StatelessWidget {
       Container(height: 35,width: 35,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: App_Colors.primarycolor,), child: IconButton(onPressed: (){},
-              icon: Icon(Icons.add, color: App_Colors.whitegreycolor,)
-          )),
+        color: App_Colors.primarycolor,), child: Center(
+           child: Icon(Icons.add, color: App_Colors.whitegreycolor,),)
+          ),
     ],);
   }
 }

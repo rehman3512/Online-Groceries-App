@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_groceries_app/controller/constants/alternative_button/alternative-button.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 
@@ -38,12 +39,13 @@ class _ProductViewState extends State<ProductView> {
             bottomRight: Radius.circular(25)),
         ),child: Center(child: Image(image: AssetImage(widget.image,),),
           ),),
+        SizedBox(height: 20,),
         ListTile(
-          title: TextWidget(text: widget.mainText, fontsize: 24,
-              fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400),
+          title: TextWidget(text: widget.mainText, fontsize: 28,
+              fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
           subtitle: TextWidget(text: widget.subText, fontsize: 16,
               fontcolor: App_Colors.greycolor, fontweight: FontWeight.w600),
-          trailing: Icon(Icons.favorite_border),
+          trailing: IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border)),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -59,11 +61,11 @@ class _ProductViewState extends State<ProductView> {
               });
             }, icon: Icon(Icons.remove,
               color: App_Colors.greycolor,)),
-            Container(height: 35,width: 35,
+            Container(height: 40,width: 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: App_Colors.whitecolor,
-              border: Border.all(color: App_Colors.greyColor)
+              border: Border.all(color: Colors.grey.shade400)
             ),child: Center(child: Text("$value"),),),
             IconButton(onPressed: (){
               value++;
@@ -74,11 +76,39 @@ class _ProductViewState extends State<ProductView> {
             }, icon: Icon(Icons.add,
               color: App_Colors.primarycolor,)),
             Spacer(),
-            TextWidget(text: "$price", fontsize: 24,
-                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400)
+            TextWidget(text: "\$${price}", fontsize: 24,
+                fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400),
+            SizedBox(width: 10,),
           ],),
         ),
+        Divider(),
         Text(widget.description),
+        Divider(),
+        Row(children: [
+          SizedBox(width: 10,),
+          TextWidget(text: "Neutrition", fontsize: 18, fontcolor: App_Colors.blackcolor,
+              fontweight: FontWeight.w600),
+          Spacer(),
+          IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),
+          SizedBox(width: 10,)
+        ],),
+        Divider(),
+        Row(children: [
+          SizedBox(width: 7,),
+          TextWidget(text: "Review", fontsize: 18, fontcolor: App_Colors.blackcolor,
+              fontweight: FontWeight.w600),
+          Spacer(),
+          Icon(Icons.star_border),
+          Icon(Icons.star_border),
+          Icon(Icons.star_border),
+          Icon(Icons.star_border),
+          Icon(Icons.star_border),
+          SizedBox(width: 5,),
+          IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),
+          SizedBox(width: 7,)
+        ],),
+        SizedBox(height: 10,),
+        AlternativeButton(text: "Add To Basket"),
       ],),
     );
   }
