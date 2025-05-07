@@ -19,7 +19,7 @@ class ExploreView extends StatefulWidget {
 }
 
 class _ExploreViewState extends State<ExploreView> {
-  int selectedindex=1;
+  int selectedindex=0;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
   ];

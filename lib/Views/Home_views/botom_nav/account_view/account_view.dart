@@ -14,7 +14,7 @@ class AccountView extends StatefulWidget {
 }
 
 class _AccountViewState extends State<AccountView> {
-  int selectedindex=4;
+  int selectedindex=0;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
   ];

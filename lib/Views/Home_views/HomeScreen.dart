@@ -93,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SingleChildScrollView(
           child:Column(
             children: [
+              pages.elementAt(selectedindex),
               SizedBox(height: 40,),
               Align( alignment: Alignment.center,
                   child: Image.asset(Appassets.homeLogoImage)),

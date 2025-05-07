@@ -15,7 +15,7 @@ class _splash_ScreenState extends State<splash_Screen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 5,),(){
+    Future.delayed(Duration(seconds: 2,),(){
       Get.to(()=>onboarding());
     });
   }

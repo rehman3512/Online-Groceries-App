@@ -15,7 +15,7 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
-  int selectedindex=2;
+  int selectedindex=0;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
   ];

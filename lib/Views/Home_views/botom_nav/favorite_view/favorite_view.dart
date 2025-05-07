@@ -17,7 +17,7 @@ class FavoriteView extends StatefulWidget {
   @override
   State<FavoriteView> createState() => _FavoriteViewState();
 }
-    int selectedindex=3;
+    int selectedindex=0;
     final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
     ];
