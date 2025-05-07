@@ -37,7 +37,7 @@ class _ProductViewState extends State<ProductView> {
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(25),
             bottomRight: Radius.circular(25)),
-        ),child: Center(child: Image(image: AssetImage(widget.image,),),
+        ),child: Center(child: Image(image: AssetImage(widget.image,),height: 200,fit: BoxFit.contain,),
           ),),
         SizedBox(height: 20,),
         ListTile(

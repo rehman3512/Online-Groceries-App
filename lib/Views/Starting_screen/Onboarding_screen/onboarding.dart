@@ -4,7 +4,6 @@ import 'package:online_groceries_app/Views/Auth_views/Signin_screen/signin_Scree
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/apptext/apptext.dart';
-
 import '../../../controller/widgets/text_components/text_components.dart';
 
 class onboarding extends StatefulWidget {

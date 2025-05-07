@@ -8,6 +8,7 @@ import 'package:online_groceries_app/Views/Auth_views/Verification_screen/Verifi
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/beverages_view/beveragesView.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Starting_screen/Onboarding_screen/onboarding.dart';
 import 'package:online_groceries_app/Views/Starting_screen/Splash_screen/splash_Screen.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: splash_Screen(),
     );
   }
 }
