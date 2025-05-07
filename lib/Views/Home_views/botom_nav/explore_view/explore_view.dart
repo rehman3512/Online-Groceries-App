@@ -5,6 +5,7 @@ import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/beverages_view/beveragesView.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/search_view/search-view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
@@ -18,12 +19,12 @@ class ExploreView extends StatefulWidget {
 }
 
 class _ExploreViewState extends State<ExploreView> {
-  int selectedindex=0;
+  int selectedindex=1;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
   ];
   List <FindProductsModel> findProductsList = [
-    FindProductsModel(img: Appassets.freshFruitsImage, text: "Fresh Fruits \n & Vegetable", color: Colors.green.shade100,navigate: BeveragesView()),
+    FindProductsModel(img: Appassets.freshFruitsImage, text: "Fresh Fruits \n & Vegetable", color: Colors.green.shade100,navigate: SearchView()),
     FindProductsModel(img: Appassets.cookingOilImage, text: "Cooking Oil \n & Ghee",color: Colors.orange.shade100,navigate: BeveragesView()),
     FindProductsModel(img: Appassets.meatFishImage, text: "Meat & Fish",color: Colors.pink.shade100,navigate: BeveragesView()),
     FindProductsModel(img: Appassets.bakerySnacksImage, text: "Bakery & Snacks",color: Colors.purple.shade100,navigate: BeveragesView()),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries_app/Model/explore_model/explore-Model.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/filter_view/filter-view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
 import 'package:online_groceries_app/controller/constants/smallButton/small-Button.dart';
@@ -15,17 +16,17 @@ class BeveragesView extends StatefulWidget {
 class _BeveragesViewState extends State<BeveragesView> {
   List <ExploreModel> exploreModelList=[
     ExploreModel(image: Appassets.dietCokeCanImage, mainText: "Diet Coke",
-        subText: "355ml, price",priceText: "\$${1.99}"),
+        subText: "355ml, Price",priceText: "\$${1.99}"),
     ExploreModel(image: Appassets.spriteCanImage, mainText: "Sprite Can",
-        subText: "325ml, price",priceText: "\$${1.50}"),
+        subText: "325ml, Price",priceText: "\$${1.50}"),
     ExploreModel(image: Appassets.appleJuiceImage, mainText: "Apple & Grape \n Juice",
-        subText: "2l, price",priceText: "\$${15.99}"),
+        subText: "2l,Price",priceText: "\$${15.99}"),
     ExploreModel(image: Appassets.orangeJusiceImage, mainText: "Orange Juice",
-        subText: "2l, price",priceText: "\$${15.99}"),
+        subText: "2l, Price",priceText: "\$${15.99}"),
     ExploreModel(image: Appassets.cocaColaCanImage, mainText: "Coca Cola Can",
-        subText: "325ml,price",priceText: "\$${4.99}"),
+        subText: "325ml, Price",priceText: "\$${4.99}"),
     ExploreModel(image: Appassets.pepsiCanImage, mainText: "Pepsi Can",
-        subText: "330ml, price",priceText: "\$${4.99}" )
+        subText: "330ml, Price",priceText: "\$${4.99}")
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,10 @@ class _BeveragesViewState extends State<BeveragesView> {
               Icon(Icons.arrow_back_ios_new),
               TextWidget(text: "Beverages", fontsize: 20, fontcolor: App_Colors.blackcolor,
                   fontweight: FontWeight.w600),
-              Icon(Icons.filter_list),
+              IconButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=>FilterView())
+                );}, icon: Icon(Icons.filter_list),),
           ],),
           SizedBox(height: 20,),
           Expanded(

@@ -6,6 +6,7 @@ import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/exp
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
+import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 class CartView extends StatefulWidget {
   const CartView({super.key});
 
@@ -14,7 +15,7 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
-  int selectedindex=0;
+  int selectedindex=2;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
   ];
@@ -54,7 +55,11 @@ class _CartViewState extends State<CartView> {
       body: Column(
         children: [
           pages.elementAt(selectedindex),
-          Center(child: Text("Cart View"),),
+          SizedBox(height: 40,),
+          Align(child: Center(child: TextWidget(text: "My Cart", fontsize: 20,
+              fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
+          SizedBox(height: 20,),
+          Divider(),
         ],
       ),
     );

@@ -18,7 +18,7 @@ class Appassets {
   static String spriteCanImage = "assets/sprite.png";
   static String cocaColaCanImage = "assets/cola.png";
   static String pepsiCanImage = "assets/pepsi.png";
-  static String appleJuiceImage = "assets/apple.png";
+  static String appleJuiceImage = "assets/applejuice.png";
   static String orangeJusiceImage = "assets/orange.png";
   static String eggChickenRedImage = "assets/eggRed.png";
   static String eggChickenWhiteImage = "assets/eggWhite.png";

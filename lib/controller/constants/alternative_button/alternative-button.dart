@@ -8,7 +8,7 @@ class AlternativeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(height: 65,width: 280,
+    return Container(height: 65,width: 350,
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(19),
       color: App_Colors.primarycolor,
     ),child: Center(child: TextWidget(text: text, fontsize: 18,
