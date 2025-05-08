@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Model/account_model/account-model.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
+import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
+import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 class AccountView extends StatefulWidget {
   const AccountView({super.key});
 
@@ -17,6 +20,16 @@ class _AccountViewState extends State<AccountView> {
   int selectedindex=0;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
+  ];
+  List<AccountModel> accountModelList=[
+    AccountModel(icon: Icon(Icons.shopping_bag_outlined), text: "Orders"),
+    AccountModel(icon: Icon(Icons.chrome_reader_mode_sharp), text: "My Details"),
+    AccountModel(icon: Icon(Icons.location_on_outlined), text: "Delivery Address"),
+    AccountModel(icon:  Icon(Icons.payment), text: "Payment Methods"),
+    AccountModel(icon: Icon(Icons.discount_outlined), text: "Promo Card"),
+    AccountModel(icon: Icon(Icons.notifications_none), text: "Notifications"),
+    AccountModel(icon:  Icon(Icons.help_outline), text: "Help"),
+    AccountModel(icon:  Icon(Icons.report_gmailerrorred), text: "About"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -52,103 +65,56 @@ class _AccountViewState extends State<AccountView> {
         ],
       ),
       backgroundColor: App_Colors.whitecolor,
-      body: ListView(children: [
-        pages.elementAt(selectedindex),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons.shopping_bag_outlined),
-            SizedBox(width: 10,),
-            Text("Orders")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons.chrome_reader_mode_sharp),
-            SizedBox(width: 10,),
-            Text("My Details"),
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons.location_on_outlined),
-            SizedBox(width: 10,),
-            Text("Delivery Address")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons.payment),
-            SizedBox(width: 10,),
-            Text("Payment method")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons. discount_outlined),
-            SizedBox(width: 10,),
-            Text("Promo Card")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons.notifications),
-            SizedBox(width: 10,),
-            Text("Notification")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},
-          title: Row(
-          children: [
-            Icon(Icons.help_outline),
-            SizedBox(width: 10,),
-            Text("Help")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        ListTile( onTap: (){},title: Row(
-          children: [
-            Icon(Icons.report_gmailerrorred),
-            SizedBox(width: 10,),
-            Text("About")
-          ],),
-          trailing: Icon(Icons.chevron_right),
-        ),
-        Divider(),
-        Container( height: 70,width: 250,
-          margin: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: App_Colors.GreyColor,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: App_Colors.GreyColor),
-        ), child: Row(children: [
-          SizedBox(width: 30,),
-          Icon(Icons.logout,color: App_Colors.primarycolor,),
-            SizedBox(width: 100,),
-            Text("Log Out",style: TextStyle(
-                color: App_Colors.primarycolor),)
-          ],),
-        ),
-      ],),
+      body: Column(
+        children: [
+          SizedBox(height: 50,),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(Appassets.profileImage),),
+            title: Row(children: [
+              TextWidget(text: "Rehman", fontsize: 20,
+                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
+              SizedBox(width: 10,),
+              Icon(Icons.edit_outlined,color: App_Colors.primarycolor,)
+            ],),
+            subtitle: TextWidget(text: "rehmankh2256@gmail.com", fontsize: 16,
+                fontcolor: App_Colors.greycolor, fontweight: FontWeight.w400),
+          ),
+          SizedBox(height: 20,),
+          Divider(),
+          Expanded(
+              child: ListView.builder(
+                  itemCount: accountModelList.length,
+                  itemBuilder: (context,index){
+                    return Column(children: [
+                      ListTile( onTap: (){},
+                        leading: accountModelList[index].icon,
+                        title: Text(accountModelList[index].text.toString()),
+                        trailing:   Icon(Icons.chevron_right),
+                      ),
+                      Divider(),
+                    ],);
+                  })
+          ),
+          Container( height: 65,
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.grey.shade200,
+          ),child: Row(children: [
+            SizedBox(width: 20,),
+            Icon(Icons.logout,color: App_Colors.primarycolor,),
+            Padding(
+              padding: const EdgeInsets.symmetric( horizontal: 110),
+              child: TextWidget(text: "Log Out", fontsize: 18, fontcolor: App_Colors.primarycolor,
+                    fontweight: FontWeight.w500),
+            ),
+            ],),
+          ),
+          SizedBox(height: 20,)
+        ],
+      ),
     );
   }
 }
+

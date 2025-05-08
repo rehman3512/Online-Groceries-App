@@ -21,12 +21,12 @@ class _OrderAcceptedState extends State<OrderAccepted> {
           Align( alignment: Alignment.center,
            child: Image.asset(Appassets.orderAcceptedImage),
           ),
-          SizedBox(height: 50,),
+          SizedBox(height: 70,),
           Align( alignment: Alignment.center,
           child: TextWidget(text: "Your Order has been \n accepted",
               fontsize: 30, fontcolor: App_Colors.blackcolor,
               fontweight: FontWeight.w600),),
-          SizedBox(height: 50,),
+          SizedBox(height: 20,),
           TextWidget(text: "Your item has been placed and is on \n it's way to being processsed",
               fontsize: 16, fontcolor: App_Colors.greycolor, fontweight: FontWeight.w400),
           Spacer(),
@@ -38,7 +38,7 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                   text: "Back to home", fontsize: 18, fontcolor: App_Colors.blackcolor,
                   fontweight: FontWeight.w400),)
       ),
-          SizedBox(height: 30,),
+          SizedBox(height: 50,),
       ],),
     );
   }

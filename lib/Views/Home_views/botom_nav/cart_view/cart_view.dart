@@ -58,8 +58,12 @@ class _CartViewState extends State<CartView> {
           SizedBox(height: 40,),
           Align(child: Center(child: TextWidget(text: "My Cart", fontsize: 20,
               fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
-          SizedBox(height: 20,),
+          SizedBox(height: 30,),
           Divider(),
+          ListView.builder(
+              itemBuilder: (context,index){
+                return ListTile();
+              })
         ],
       ),
     );

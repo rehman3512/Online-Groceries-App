@@ -71,26 +71,73 @@ class _FavoriteViewState extends State<FavoriteView> {
         ],
       ),
       body: Column(
-        children: [SizedBox(height: 30,),
-          Align(child: Center(child: TextWidget(text: "Favorite", fontsize: 20,
+        children: [SizedBox(height: 50,),
+          Align(child: Center(child: TextWidget(text: "Favorite", fontsize: 24,
               fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
-          SizedBox(height: 10,),
+          SizedBox(height: 30,),
           Divider(),
           Expanded(
             child: ListView.builder(itemCount: favoriteModelList.length,
                 itemBuilder: (context,index){
-               return Padding(
-                 padding: const EdgeInsets.all(8.0),
-                 child: ListTile(
-                  leading: Image.asset(favoriteModelList[index].imagepath.toString()),
-                  title: Text(favoriteModelList[index].mainText.toString()),
-                  subtitle: Text(favoriteModelList[index].subText.toString()),
+               return Column(
+                 children: [
+                   Padding(
+                     padding: const EdgeInsets.all(8.0),
+                     child: ListTile(
+                      leading: Image.asset(favoriteModelList[index].imagepath.toString()),
+                      title: TextWidget(text: favoriteModelList[index].mainText.toString(),
+                          fontsize: 18, fontcolor: App_Colors.blackcolor,
+                          fontweight: FontWeight.w600),
+                      subtitle: TextWidget(text: favoriteModelList[index].subText.toString(),
+                          fontsize: 16, fontcolor: App_Colors.greycolor,
+                          fontweight: FontWeight.w600),
+                         trailing: Row(
+                           mainAxisSize: MainAxisSize.min,
+                           children: [
+                           TextWidget(text: favoriteModelList[index].priceText.toString(),
+                               fontsize: 16, fontcolor: App_Colors.blackcolor,
+                               fontweight: FontWeight.w600),
+                           SizedBox(width: 10,),
+                             Icon(Icons.chevron_right)
+                         ],),
 
-                 ),
+                     ),
+                   ),
+                   Divider()
+                 ],
                );
             }),
           ),
-          AlternativeButton(text: "Add All To Cart"),
+          InkWell( onTap: (){
+            Get.defaultDialog(
+              title: "",
+              content: Column(children: [
+                Image.asset(Appassets.orderFailedImage),
+                SizedBox(height: 20,),
+                TextWidget(text: "Oops! Order Failed", fontsize: 28,
+                    fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
+                SizedBox(height: 20,),
+                TextWidget(text: "Somrthing went tembly wrong.", fontsize: 16,
+                    fontcolor: App_Colors.greycolor, fontweight: FontWeight.w600)
+              ],),
+              actions: [
+                GestureDetector( onTap:(){
+                  Get.back();
+                },
+                  child: AlternativeButton(text: "Please Try Again")),
+                GestureDetector( onTap: (){
+                  Get.back();
+                },
+                  child: Container(height: 65,width: 350,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(19),
+                        color: Colors.grey.shade200,),child: Center(child: TextWidget(
+                          text: "Back to home", fontsize: 18, fontcolor: App_Colors.blackcolor,
+                          fontweight: FontWeight.w400),)
+                  ),
+                )
+              ]
+            );
+          }, child: AlternativeButton(text: "Add All To Cart")),
           SizedBox(height: 20,),
         ],
       ),
