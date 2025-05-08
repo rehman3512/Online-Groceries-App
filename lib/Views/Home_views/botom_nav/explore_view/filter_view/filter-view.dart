@@ -11,7 +11,14 @@ class FilterView extends StatefulWidget {
 }
 
 class _FilterViewState extends State<FilterView> {
-  String groupValue="Eggs";
+  bool option1=false;
+  bool option2=false;
+  bool option3=false;
+  bool option4=false;
+  bool option5=false;
+  bool option6=false;
+  bool option7=false;
+  bool option8=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,61 +49,74 @@ class _FilterViewState extends State<FilterView> {
                   fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
               Row(
                 children: [
-                  Radio(
-                      activeColor: App_Colors.primarycolor,
-                      value: "Eggs",
-                      groupValue: groupValue,
-                      onChanged: (value) {
-                    groupValue=value.toString();
-                    setState(() {
+                  Checkbox(
+                    activeColor: App_Colors.primarycolor,
+                      checkColor: App_Colors.whitecolor,
+                      value: option1,
+                      onChanged: ((value){
+                        option1=value!;
+                        setState(() {
 
-                    });
-                  }),
-                  Text("Eggs"),
+                        });
+                      })
+                  ),
+                  Text("Eggs",style: TextStyle(
+                    color: option1? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),),
                 ],
               ),
               Row(
                 children: [
-                  Radio(
+                  Checkbox(
                       activeColor: App_Colors.primarycolor,
-                      value: "Noodles & Pasta",
-                      groupValue: groupValue,
-                      onChanged: (value){
-                    groupValue=value.toString();
-                    setState(() {
-                    });
-                  }),
-                  Text("Noodles & Pasta"),
+                      checkColor: App_Colors.whitecolor,
+                      value: option2,
+                      onChanged: ((value){
+                        option2=value!;
+                        setState(() {
+
+                        });
+                      })
+                  ),
+                  Text("Noodles & Pasta",style: TextStyle(
+                    color: option2? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),),
                 ],
               ),
               Row(
                 children: [
-                  Radio(
+                  Checkbox(
                       activeColor: App_Colors.primarycolor,
-                      value: "Chips & Crisps",
-                      groupValue: groupValue,
-                      onChanged: (value){
-                    groupValue=value.toString();
-                    setState(() {
+                      checkColor: App_Colors.whitecolor,
+                      value: option3,
+                      onChanged: ((value){
+                        option3=value!;
+                        setState(() {
 
-                    });
-                  }),
-                  Text("Chips & Crisps"),
+                        });
+                      })
+                  ),
+                  Text("Chips & Crisps",style: TextStyle(
+                    color: option3? App_Colors.primarycolor : App_Colors.blackcolor,),
+                  )
                 ],
               ),
               Row(
                 children: [
-                  Radio(
-                      activeColor: App_Colors.primarycolor,
-                      value: "Fast Food",
-                      groupValue: groupValue,
-                      onChanged: (value){
-                    groupValue=value.toString();
-                    setState(() {
+                  Checkbox(
+                    activeColor: App_Colors.primarycolor,
+                      checkColor: App_Colors.whitecolor,
+                      value: option4,
+                      onChanged: ((value){
+                        option4=value!;
+                        setState(() {
 
-                    });
-                  }),
-                  Text("Fast Food")
+                        });
+                      })
+                  ),
+                  Text("Fast Food",style: TextStyle(
+                    color: option4? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),)
                 ],
               ),
               SizedBox(height: 20,),
@@ -104,61 +124,74 @@ class _FilterViewState extends State<FilterView> {
                   fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
               Row(
                 children: [
-                  Radio(
+                  Checkbox(
                       activeColor: App_Colors.primarycolor,
-                      value: "Indivisual Callection",
-                      groupValue: groupValue,
-                      onChanged: (value) {
-                        groupValue=value.toString();
+                      checkColor: App_Colors.whitecolor,
+                      value: option5,
+                      onChanged: ((value){
+                        option5=value!;
                         setState(() {
 
                         });
-                      }),
-                  Text("Indivisual Callection"),
+                      })
+                  ),
+                  Text("Indivisual Callection",style: TextStyle(
+                    color: option5? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),),
                 ],
               ),
               Row(
                 children: [
-                  Radio(
+                  Checkbox(
                       activeColor: App_Colors.primarycolor,
-                      value: "Cocola",
-                      groupValue: groupValue,
-                      onChanged: (value){
-                        groupValue=value.toString();
+                      checkColor: App_Colors.whitecolor,
+                      value: option6,
+                      onChanged: ((value){
+                        option6=value!;
                         setState(() {
+
                         });
-                      }),
-                  Text("Cocola"),
+                      })
+                  ),
+                  Text("Cocola",style: TextStyle(
+                    color: option6? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),),
                 ],
               ),
               Row(
                 children: [
-                  Radio(
+                  Checkbox(
                       activeColor: App_Colors.primarycolor,
-                      value: "Ifad",
-                      groupValue: groupValue,
-                      onChanged: (value){
-                        groupValue=value.toString();
+                      checkColor: App_Colors.whitecolor,
+                      value: option7,
+                      onChanged: ((value){
+                        option7=value!;
                         setState(() {
 
                         });
-                      }),
-                  Text("Ifad"),
+                      })
+                  ),
+                  Text("Ifad",style: TextStyle(
+                    color: option7? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),),
                 ],
               ),
               Row(
                 children: [
-                  Radio(
+                  Checkbox(
                       activeColor: App_Colors.primarycolor,
-                      value: "Kazi Farmas",
-                      groupValue: groupValue,
-                      onChanged: (value){
-                        groupValue=value.toString();
+                      checkColor: App_Colors.whitecolor,
+                      value: option8,
+                      onChanged: ((value){
+                        option8=value!;
                         setState(() {
 
                         });
-                      }),
-                  Text("Kazi Farmas")
+                      })
+                  ),
+                  Text("Kazi Farmas",style: TextStyle(
+                    color: option8? App_Colors.primarycolor : App_Colors.blackcolor,
+                  ),)
                 ],
               ),
               Spacer(),

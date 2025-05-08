@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Model/cart_model/cart-model.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
+import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
 import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 class CartView extends StatefulWidget {
   const CartView({super.key});
@@ -18,6 +20,16 @@ class _CartViewState extends State<CartView> {
   int selectedindex=0;
   final List pages= [
     ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
+  ];
+  List<CartModel> cartModelList=[
+    CartModel(image: Appassets.bellPaperImage, mainText: "Bell Paper Red",
+        subText: "1kg, Price",priceText: "\$${4.99}"),
+    CartModel(image: Appassets.eggChickenRedImage, mainText: "Egg Chicken Red",
+        subText: "4pcs, Price",priceText: "\$${1.99}"),
+    CartModel(image: Appassets.bananaImage, mainText: "Organic Bananas",
+        subText: "12kg, Price",priceText: "\$${3.00}"),
+    CartModel(image: Appassets.gingerImage, mainText: "Ginger",
+        subText: "250gm, Price",priceText: "\$${2.99}")
   ];
   @override
   Widget build(BuildContext context) {
@@ -60,10 +72,45 @@ class _CartViewState extends State<CartView> {
               fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
           SizedBox(height: 30,),
           Divider(),
-          ListView.builder(
-              itemBuilder: (context,index){
-                return ListTile();
-              })
+          Expanded(
+            child: ListView.builder(
+                itemCount: cartModelList.length,
+                itemBuilder: (context,index){
+                  return Column(
+                    children: [
+                      Row(children: [
+                        Column(children: [
+                          Image.asset(cartModelList[index].image.toString())
+                        ],),
+                        Column(children: [
+                          Row(children: [
+                           ListTile(
+                             title:  TextWidget(text: cartModelList[index].mainText.toString(),
+                                 fontsize: 18, fontcolor: App_Colors.blackcolor,
+                                 fontweight: FontWeight.w600),
+                             subtitle:  TextWidget(text: cartModelList[index].mainText.toString(),
+                                 fontsize: 18, fontcolor: App_Colors.blackcolor,
+                                 fontweight: FontWeight.w600),
+                             trailing: Icon(Icons.close)
+                           )
+                          ],),
+                          Row(children: [
+                            Container( height: 45,width: 45,
+                              decoration: BoxDecoration(
+                                color: App_Colors.whitecolor,
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.grey.shade200)
+                              ), child: Center(child: Icon(Icons.remove,
+                                color: App_Colors.greycolor,),),
+                            )
+                          ],)
+                        ],)
+                      ],),
+                      Divider()
+                    ],
+                  );
+                }),
+          )
         ],
       ),
     );
