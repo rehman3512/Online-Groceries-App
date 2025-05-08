@@ -26,4 +26,5 @@ class Appassets {
   static String noodlesImage = "assets/noodles.png";
   static String eggNoodlesImage = "assets/eggNoodles.png";
   static String mayonnaisEgglesImage = "assets/mayyonais.png";
+  static String orderAcceptedImage = "assets/order.png";
 }

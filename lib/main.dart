@@ -9,6 +9,7 @@ import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/order_accepted/order-accepted.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/beverages_view/beveragesView.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/filter_view/filter-view.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splash_Screen(),
+      home: OrderAccepted(),
     );
   }
 }
