@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Auth_views/Login_screen/Login_Screen.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 
 import '../../Home_views/HomeScreen.dart';
@@ -45,9 +46,10 @@ class _Location_screenState extends State<Location_screen> {
                   color: App_Colors.greycolor,fontSize: 16,
                   fontWeight: FontWeight.w600),),
             ),
-            ListTile(title: Text("Banasree",style: TextStyle(
+            ListTile(title: Text("Dera Ismail Khan",style: TextStyle(
                 color: App_Colors.blackcolor,fontSize: 18,
                 fontWeight: FontWeight.w600),),
+              trailing: Icon(Icons.keyboard_arrow_down),
             ),
             Divider(),
             SizedBox(height: 20,),
@@ -60,11 +62,12 @@ class _Location_screenState extends State<Location_screen> {
             ListTile(title: Text("Types of your area",style: TextStyle(
                 color: App_Colors.greycolor,fontSize: 18,
                 fontWeight: FontWeight.w600),),
+              trailing: Icon(Icons.keyboard_arrow_down),
             ),
             Divider(),
             SizedBox(height: 30,),
             InkWell( onTap: (){
-              Get.to(()=>HomeScreen());
+              Get.to(()=>LoginScreen());
             },
               child: Container( height: 55,
                 margin: EdgeInsets.symmetric(horizontal: 30),

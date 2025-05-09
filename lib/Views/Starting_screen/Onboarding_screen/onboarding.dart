@@ -21,8 +21,9 @@ class _onboardingState extends State<onboarding> {
         children: [
           //ImageIcon(AssetImage(Appasset.appIconlogo),color: App_Colors.primarycolor,),
           //Image.asset(Appasset.appIconlogo,color: App_Colors.primarycolor,),
-          Positioned( top: 0,left: 0,
-              child: Image.asset('assets/8140 1.png',fit: BoxFit.fill,)),
+           Positioned( //top: 0,left: 0,
+              child: Image.asset('assets/8140 1.png',fit: BoxFit.fill,
+              width: double.infinity,height: double.infinity,)),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +42,8 @@ class _onboardingState extends State<onboarding> {
                 child: InkWell( onTap: (){
                   Get.to(()=>Signin_Screen());
                 },
-                  child: Container(height: 55,width: 380,
+                  child: Container(height: 55,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: App_Colors.primarycolor,

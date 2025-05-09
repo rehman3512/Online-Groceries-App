@@ -97,11 +97,14 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 40,),
               Align( alignment: Alignment.center,
                   child: Image.asset(Appassets.homeLogoImage)),
-          SizedBox(height: 10,),
+          SizedBox(height: 18,),
           Row( mainAxisAlignment: MainAxisAlignment.center,
             children: [
                   Icon(Icons.location_on), SizedBox(width: 10,),
-                  Text("Dhaka,Banassre")],),
+                  TextWidget(text: "KPK, DIKhan", fontsize: 16,
+                      fontcolor: App_Colors.blackcolor,
+                      fontweight: FontWeight.w400),
+            ],),
               Container(height: 50, margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
