@@ -58,18 +58,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              decoration: InputDecoration(
-
-          //      border: OutlineInputBorder(),
-               ),
+              decoration: InputDecoration(),
               keyboardType: TextInputType.number,
-              // maxLength: 4,
-              // validator: (String? value) {
-              //   if(value!.length !=4) {
-              //     return "please enter a 4-digit code";
-              //   }
-              //   return null;
-              // },
+
             ),
            ),
 
