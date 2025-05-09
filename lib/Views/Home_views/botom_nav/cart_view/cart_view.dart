@@ -64,55 +64,116 @@ class _CartViewState extends State<CartView> {
           }, icon: Icon(Icons.person)), label: "Account"),
         ],
       ),
-      body: Column(
-        children: [
-          pages.elementAt(selectedindex),
-          SizedBox(height: 40,),
-          Align(child: Center(child: TextWidget(text: "My Cart", fontsize: 20,
-              fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
-          SizedBox(height: 30,),
-          Divider(),
-          Expanded(
-            child: ListView.builder(
-                itemCount: cartModelList.length,
-                itemBuilder: (context,index){
-                  return Column(
-                    children: [
-                      Row(children: [
-                        Column(children: [
-                          Image.asset(cartModelList[index].image.toString())
-                        ],),
-                        Column(children: [
-                          Row(children: [
-                           ListTile(
-                             title:  TextWidget(text: cartModelList[index].mainText.toString(),
-                                 fontsize: 18, fontcolor: App_Colors.blackcolor,
-                                 fontweight: FontWeight.w600),
-                             subtitle:  TextWidget(text: cartModelList[index].mainText.toString(),
-                                 fontsize: 18, fontcolor: App_Colors.blackcolor,
-                                 fontweight: FontWeight.w600),
-                             trailing: Icon(Icons.close)
-                           )
-                          ],),
-                          Row(children: [
-                            Container( height: 45,width: 45,
-                              decoration: BoxDecoration(
-                                color: App_Colors.whitecolor,
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.grey.shade200)
-                              ), child: Center(child: Icon(Icons.remove,
-                                color: App_Colors.greycolor,),),
-                            )
-                          ],)
-                        ],)
+      body: Column(children: [
+        pages.elementAt(selectedindex),
+        SizedBox(height: 40,),
+        Align(child: Center(child: TextWidget(text: "My Cart", fontsize: 20,
+          fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
+        SizedBox(height: 30,),
+        Divider(),
+        Expanded(
+          child: ListView.builder(
+              itemCount: cartModelList.length,
+              itemBuilder: (context,index){
+                return Column(
+                  children: [
+                    Row(children: [
+                      Column(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Image.asset(cartModelList[index].image.toString()),
+                        )
                       ],),
-                      Divider()
-                    ],
-                  );
-                }),
-          )
-        ],
-      ),
+                     Column( mainAxisSize: MainAxisSize.min,
+                       children: [
+                       ListTile(
+                         title: Text("data"),
+                       )
+                     ],),
+                     Expanded(
+                       child: ListTile(
+                           title:  TextWidget(text: cartModelList[index].mainText.toString(),
+                               fontsize: 18, fontcolor: App_Colors.blackcolor,
+                               fontweight: FontWeight.w600),
+                           subtitle:  TextWidget(text: cartModelList[index].subText.toString(),
+                               fontsize: 16, fontcolor: App_Colors.greycolor,
+                               fontweight: FontWeight.w600),
+                           trailing: Icon(Icons.close,color: App_Colors.greycolor,size: 28)
+                       ),
+                     ),
+                      // Container(height: 45,width: 45,
+                      //   decoration: BoxDecoration(
+                      //       color: App_Colors.whitecolor,
+                      //       borderRadius: BorderRadius.circular(15),
+                      //       border: Border.all(color: Colors.grey.shade300)
+                      //   ), child: Center(child: Icon(Icons.remove)),
+                      // )
+                    ],),
+                    Divider()
+                  ],
+                );
+              }),
+        )
+      ],)
     );
   }
 }
+
+
+
+
+
+
+// Column(
+// children: [
+// pages.elementAt(selectedindex),
+// SizedBox(height: 40,),
+// Align(child: Center(child: TextWidget(text: "My Cart", fontsize: 20,
+// fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
+// SizedBox(height: 30,),
+// Divider(),
+// Expanded(
+// child: ListView.builder(
+// itemCount: cartModelList.length,
+// itemBuilder: (context,index){
+// return Column(
+// children: [
+// Expanded(
+// child: Row(children: [
+// Column(children: [
+// Image.asset(cartModelList[index].image.toString())
+// ],),
+// Column(
+// children: [
+// Expanded(
+// child: ListTile(
+// title:  TextWidget(text: cartModelList[index].mainText.toString(),
+// fontsize: 18, fontcolor: App_Colors.blackcolor,
+// fontweight: FontWeight.w600),
+// subtitle:  TextWidget(text: cartModelList[index].mainText.toString(),
+// fontsize: 18, fontcolor: App_Colors.blackcolor,
+// fontweight: FontWeight.w600),
+// trailing: Icon(Icons.close)
+// ),
+// ),
+// Row( mainAxisSize: MainAxisSize.min,
+// children: [
+// Container( height: 45,width: 45,
+// decoration: BoxDecoration(
+// color: App_Colors.whitecolor,
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all(color: Colors.grey.shade200)
+// ), child: Center(child: Icon(Icons.remove,
+// color: App_Colors.greycolor,),),
+// )
+// ],)
+// ],)
+// ],),
+// ),
+// Divider()
+// ],
+// );
+// }),
+// )
+// ],
+// ),
