@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/controller/constants/alternative_button/alternative-button.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
@@ -30,14 +32,23 @@ class _OrderAcceptedState extends State<OrderAccepted> {
           TextWidget(text: "Your item has been placed and is on \n it's way to being processsed",
               fontsize: 16, fontcolor: App_Colors.greycolor, fontweight: FontWeight.w400),
           Spacer(),
-          AlternativeButton(text: "Track Order"),
+          InkWell( onTap: (){
+            Get.to(()=>CartView());
+          },
+              child: AlternativeButton(text: "Track Order")),
           SizedBox(height: 2,),
-          Container(height: 65,width: 350,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(19),
-                color: Colors.grey.shade200,),child: Center(child: TextWidget(
-                  text: "Back to home", fontsize: 18, fontcolor: App_Colors.blackcolor,
-                  fontweight: FontWeight.w400),)
-      ),
+          InkWell(  onTap: (){
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context)=>CartView())
+            );
+          },
+            child: Container(height: 65,width: 350,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(19),
+                  color: Colors.grey.shade200,),child: Center(child: TextWidget(
+                    text: "Back to home", fontsize: 18, fontcolor: App_Colors.blackcolor,
+                    fontweight: FontWeight.w400),)
+                  ),
+          ),
           SizedBox(height: 50,),
       ],),
     );
