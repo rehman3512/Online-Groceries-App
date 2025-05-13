@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
@@ -17,7 +18,7 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int selectedindex=0;
   final List pages= [
-    ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
+    HomeScreen(),ExploreView(),CartView(),FavoriteView(),AccountView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -33,13 +34,21 @@ class _BottomNavState extends State<BottomNav> {
           });
         },
         items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopify_sharp),
-              label: "shop"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+          BottomNavigationBarItem(icon: IconButton(onPressed: (){
+           Get.to(()=>HomeScreen());
+          }, icon: Icon(Icons.shopify)),label: "shop"),
+          BottomNavigationBarItem(icon: IconButton(onPressed: (){
+            Get.to(()=>ExploreView());
+          }, icon: Icon(Icons.search)), label: "Explore"),
+          BottomNavigationBarItem(icon: IconButton(onPressed: (){
+            Get.to(()=>CartView());
+          }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
+          BottomNavigationBarItem(icon: IconButton(onPressed: (){
+            Get.to(()=>FavoriteView());
+          }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
+          BottomNavigationBarItem(icon: IconButton(onPressed: (){
+            Get.to(()=>AccountView());
+          }, icon: Icon(Icons.person)), label: "Account"),
         ],
       ),
       body: pages.elementAt(selectedindex),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_groceries_app/Model/account_model/account-model.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
@@ -34,36 +35,37 @@ class _AccountViewState extends State<AccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: App_Colors.blackcolor,
-        selectedItemColor: App_Colors.primarycolor,
-        currentIndex: selectedindex,
-        onTap: (index){
-          selectedindex=index;
-          setState(() {
-
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-              icon: IconButton(onPressed: (){
-                Get.to(()=>HomeScreen());
-              }, icon: Icon(Icons.shopify_sharp)),
-              label: "shop"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>ExploreView());
-          }, icon: Icon(Icons.search),),label: "Explore"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>CartView());
-          }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>FavoriteView());
-          }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>AccountView());
-          }, icon: Icon(Icons.person)), label: "Account"),
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   unselectedItemColor: App_Colors.blackcolor,
+      //   selectedItemColor: App_Colors.primarycolor,
+      //   currentIndex: selectedindex,
+      //   onTap: (index){
+      //     selectedindex=index;
+      //     setState(() {
+      //
+      //     });
+      //   },
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         icon: IconButton(onPressed: (){
+      //           Get.to(()=>HomeScreen());
+      //         }, icon: Icon(Icons.shopify_sharp)),
+      //         label: "shop"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>ExploreView());
+      //     }, icon: Icon(Icons.search),),label: "Explore"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>CartView());
+      //     }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>FavoriteView());
+      //     }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>AccountView());
+      //     }, icon: Icon(Icons.person)), label: "Account"),
+      //   ],
+      // ),
       backgroundColor: App_Colors.whitecolor,
       body: Column(
         children: [

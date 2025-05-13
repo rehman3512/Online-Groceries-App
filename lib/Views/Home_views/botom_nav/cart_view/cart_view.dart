@@ -4,6 +4,7 @@ import 'package:online_groceries_app/Model/bottomSheet_model/bottomSheet-model.d
 import 'package:online_groceries_app/Model/cart_model/cart-model.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/order_accepted/order-accepted.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/favorite_view/favorite_view.dart';
@@ -36,7 +37,7 @@ class _CartViewState extends State<CartView> {
   ];
   
   List<BottomSheetModel> bottomSheetModelList = [
-    BottomSheetModel(firstText: "Delivery", lastText: "Select Method"),
+    BottomSheetModel(firstText: "Delivery", lastText: "Select Method",),
     BottomSheetModel(firstText: "Payment",
         lastText: "${Icon(Icons.flag_circle_rounded)}"),
     BottomSheetModel(firstText: "Promo Code", lastText: "Pick discount"),
@@ -47,13 +48,14 @@ class _CartViewState extends State<CartView> {
   double price1=0;
   int value=1;
 
+
   showBottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
       context:context,
         isScrollControlled: true,
     builder: (BuildContext context) {
         return SizedBox(
-          height: MediaQuery.of(context).size.height/1.9,
+          height: MediaQuery.of(context).size.height/1.8,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
@@ -108,36 +110,38 @@ class _CartViewState extends State<CartView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: App_Colors.blackcolor,
-        selectedItemColor: App_Colors.primarycolor,
-        currentIndex: selectedindex,
-        onTap: (index){
-          selectedindex=index;
-          setState(() {
-
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-              icon: IconButton(onPressed: (){
-                Get.to(()=>HomeScreen());
-              }, icon: Icon(Icons.shopify_sharp)),
-              label: "shop"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>ExploreView());
-          }, icon: Icon(Icons.search),),label: "Explore"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>CartView());
-          }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>FavoriteView());
-          }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>AccountView());
-          }, icon: Icon(Icons.person)), label: "Account"),
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   unselectedItemColor: App_Colors.blackcolor,
+      //   selectedItemColor: App_Colors.primarycolor,
+      //   currentIndex: selectedindex,
+      //   onTap: (index){
+      //     selectedindex=index;
+      //     setState(() {
+      //
+      //     });
+      //   },
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         icon: IconButton(onPressed: (){
+      //           Get.to(()=>HomeScreen());
+      //         }, icon: Icon(Icons.shopify_sharp)),
+      //         label: "shop"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>ExploreView());
+      //     }, icon: Icon(Icons.search),),label: "Explore"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>CartView());
+      //     }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>FavoriteView());
+      //     }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>AccountView());
+      //     }, icon: Icon(Icons.person)), label: "Account"),
+      //   ],
+      // ),
+      backgroundColor: App_Colors.whitecolor,
       body: Column(children: [
         pages.elementAt(selectedindex),
         SizedBox(height: 40,),
@@ -174,10 +178,10 @@ class _CartViewState extends State<CartView> {
                           {
                             value--;
                             price-=price1;
-                            setState(() {
-
-                            });
                           }
+                        setState(() {
+
+                        });
                       },
                         child: Container(height: 45,width: 45,
                           decoration: BoxDecoration(

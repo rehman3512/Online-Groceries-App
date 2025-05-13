@@ -4,6 +4,7 @@ import 'package:online_groceries_app/Model/explore_model/explore-Model.dart';
 import 'package:online_groceries_app/Model/favorite_model/favorite-model.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/explore_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/shop_view/shop_view.dart';
@@ -40,36 +41,38 @@ class _FavoriteViewState extends State<FavoriteView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: App_Colors.blackcolor,
-        selectedItemColor: App_Colors.primarycolor,
-        currentIndex: selectedindex,
-        onTap: (index){
-          selectedindex=index;
-          setState(() {
-
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-              icon: IconButton(onPressed: (){
-                Get.to(()=>HomeScreen());
-              }, icon: Icon(Icons.shopify_sharp)),
-              label: "shop"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>ExploreView());
-          }, icon: Icon(Icons.search),),label: "Explore"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>CartView());
-          }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>FavoriteView());
-          }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>AccountView());
-          }, icon: Icon(Icons.person)), label: "Account"),
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   unselectedItemColor: App_Colors.blackcolor,
+      //   selectedItemColor: App_Colors.primarycolor,
+      //   currentIndex: selectedindex,
+      //   onTap: (index){
+      //     selectedindex=index;
+      //     setState(() {
+      //
+      //     });
+      //   },
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         icon: IconButton(onPressed: (){
+      //           Get.to(()=>HomeScreen());
+      //         }, icon: Icon(Icons.shopify_sharp)),
+      //         label: "shop"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>ExploreView());
+      //     }, icon: Icon(Icons.search),),label: "Explore"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>CartView());
+      //     }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>FavoriteView());
+      //     }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
+      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
+      //       Get.to(()=>AccountView());
+      //     }, icon: Icon(Icons.person)), label: "Account"),
+      //   ],
+      // ),
+      backgroundColor: App_Colors.whitecolor,
       body: Column(
         children: [SizedBox(height: 50,),
           Align(child: Center(child: TextWidget(text: "Favorite", fontsize: 24,
