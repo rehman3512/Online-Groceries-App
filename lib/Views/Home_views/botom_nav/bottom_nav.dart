@@ -34,24 +34,14 @@ class _BottomNavState extends State<BottomNav> {
           });
         },
         items: [
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-           Get.to(()=>HomeScreen());
-          }, icon: Icon(Icons.shopify)),label: "shop"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>ExploreView());
-          }, icon: Icon(Icons.search)), label: "Explore"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>CartView());
-          }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>FavoriteView());
-          }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
-          BottomNavigationBarItem(icon: IconButton(onPressed: (){
-            Get.to(()=>AccountView());
-          }, icon: Icon(Icons.person)), label: "Account"),
+          BottomNavigationBarItem( icon: Icon(Icons.shopify),label: "shop"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
         ],
       ),
       body: pages.elementAt(selectedindex),
-    );
+     );
   }
 }

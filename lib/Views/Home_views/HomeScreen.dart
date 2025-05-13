@@ -24,10 +24,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedindex=0;
-  final List pages= [
-    ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
-  ];
+  // int selectedindex=0;
+  // final List pages= [
+  //   ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
+  // ];
   List <ExclusiveOfferModel> exclusiveOfferList= [
     ExclusiveOfferModel(imagePath: Appassets.bananaImage,
         mainText: "Organic Bananas", subText: "7pcs, Price", priceText: "4.99"),
