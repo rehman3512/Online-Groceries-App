@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Auth_views/Login_screen/Login_Screen.dart';
 import 'package:online_groceries_app/Views/Auth_views/Number_screen/Number_Screen.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -47,22 +48,28 @@ class _Signin_ScreenState extends State<Signin_Screen> {
             ),
             SizedBox(height: 25,),
             Padding(padding: EdgeInsets.symmetric(horizontal: 20),
-             child: InternationalPhoneNumberInput(onInputChanged: (value){
-               print("Country Code${value.isoCode}");
-               print("Phone Number${value.phoneNumber}");
+             child: GestureDetector( onTap: (){
+               Get.to(()=>NumberScreen());
              },
-               selectorConfig: SelectorConfig(
-                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-               ),
-               ignoreBlank: false,
-               autoValidateMode: AutovalidateMode.disabled,
-               selectorTextStyle: TextStyle(color: App_Colors.blackcolor),
-               initialValue: PhoneNumber(isoCode: 'Pk'),
-               formatInput: false,
-               keyboardType: TextInputType.numberWithOptions(signed: true,
-               decimal: true),
-               inputDecoration: InputDecoration(
-             //    hintText: "Phone number",
+               child: AbsorbPointer(
+                 child: InternationalPhoneNumberInput(onInputChanged: (value){
+                   print("Country Code${value.isoCode}");
+                   print("Phone Number${value.phoneNumber}");
+                 },
+                   selectorConfig: SelectorConfig(
+                     selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                   ),
+                   ignoreBlank: false,
+                   autoValidateMode: AutovalidateMode.disabled,
+                   selectorTextStyle: TextStyle(color: App_Colors.blackcolor),
+                   initialValue: PhoneNumber(isoCode: 'Pk'),
+                   formatInput: false,
+                   keyboardType: TextInputType.numberWithOptions(signed: true,
+                   decimal: true),
+                   inputDecoration: InputDecoration(
+                 //    hintText: "Phone number",
+                   ),
+                 ),
                ),
              ),
             ),
@@ -72,7 +79,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
             SizedBox(height: 30,),
             Padding(padding: EdgeInsets.symmetric(horizontal: 20),
               child: InkWell( onTap: (){
-                Get.to(()=>NumberScreen());
+                Get.to(()=>LoginScreen());
               },
                 child: Container(height: 55,width: 380,
                   decoration: BoxDecoration(
@@ -88,7 +95,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
             SizedBox(height: 15,),
             Padding(padding: EdgeInsets.symmetric(horizontal: 20),
               child: InkWell( onTap: (){
-                Get.to(()=>NumberScreen());
+                Get.to(()=>LoginScreen());
               },
                 child: Container(height: 55,width: 380,
                   decoration: BoxDecoration(

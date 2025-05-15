@@ -14,6 +14,29 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
 
+  bool isSecure = true;
+
+  TextEditingController userController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool isFormValid = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    userController.addListener(validateForm);
+    emailController.addListener(validateForm);
+    passwordController.addListener(validateForm);
+  }
+
+  void validateForm(){
+    setState(() {
+      isFormValid = userController.text.isNotEmpty &&
+          emailController.text.isNotEmpty && passwordController.text.isNotEmpty;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,13 +63,21 @@ class _SignupScreenState extends State<SignupScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text("Username",style: TextStyle(color: App_Colors.greycolor,
-                  fontSize: 16,fontWeight: FontWeight.w600),),
+                  fontSize: 18,fontWeight: FontWeight.w600),),
             ),
-            SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text("Abd Ur Rehman",style: TextStyle(color: App_Colors.blackcolor,
-                  fontSize: 16,fontWeight: FontWeight.w600),),
+              child: TextFormField(
+                controller: userController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter your name",
+                  hintStyle: TextStyle(
+                      color: App_Colors.greycolor,fontSize: 18,
+                      fontWeight: FontWeight.w400),
+                ),style: TextStyle( color: App_Colors.blackcolor,fontSize: 20,
+                  fontWeight: FontWeight.w600),
+              ),
             ),
             Divider(),
             SizedBox(height: 20,),
@@ -55,39 +86,55 @@ class _SignupScreenState extends State<SignupScreen> {
               child: Text("Email",style: TextStyle(color: App_Colors.greycolor,
                   fontSize: 16,fontWeight: FontWeight.w600),),
             ),
-            SizedBox(height: 15,),
-            Row(children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text("rehman@gmail.com",style: TextStyle(color: App_Colors.blackcolor,
-                    fontSize: 16,fontWeight: FontWeight.w600),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextFormField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter your email",
+                  hintStyle: TextStyle(
+                      color: App_Colors.greycolor,fontSize: 18,
+                      fontWeight: FontWeight.w400),
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/tick.png',
+                    ),),
+                ),style: TextStyle( color: App_Colors.blackcolor,fontSize: 20,
+                  fontWeight: FontWeight.w600),
               ),
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Image.asset("assets/tick.png"),
-              ),
-            ],),
+            ),
             Divider(),
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text("Password",style: TextStyle(color: App_Colors.greycolor,
-              fontWeight: FontWeight.w600,fontSize: 16),),
+              fontWeight: FontWeight.w600,fontSize: 18),),
             ),
-            Row(children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text("........",style: TextStyle(color: App_Colors.blackcolor,
-                    fontWeight: FontWeight.w600,fontSize: 40),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextFormField(
+                controller: passwordController,
+                obscureText: isSecure,
+                obscuringCharacter: ".",
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter your password",
+                  hintStyle: TextStyle(
+                      color: App_Colors.greycolor,fontSize: 20,
+                      fontWeight: FontWeight.w400),
+                  suffixIcon: IconButton(onPressed: (){
+                    isSecure = !isSecure;
+                    setState(() {
+
+                    });
+                  }, icon: Icon(isSecure? Icons.visibility_off_outlined : Icons.visibility_outlined ,
+                    color: App_Colors.greycolor,),)
+                ),style: TextStyle( color: App_Colors.greycolor,fontSize: 22,
+                  fontWeight: FontWeight.w600),
               ),
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off_outlined,size: 20,
-                  color: App_Colors.greycolor,),)
-              ),
-            ],),
+            ),
             Divider(),
             SizedBox(height: 10,),
             Padding(
@@ -97,13 +144,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   fontSize: 16,fontWeight: FontWeight.w600),),
             ),
             SizedBox(height: 30,),
-            Center(child: InkWell( onTap: (){
+            Center(child: InkWell( onTap: isFormValid?(){
               Get.to(()=>BottomNav());
-            },
+            } : null,
               child: Container(height: 55,width: 340,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: App_Colors.primarycolor,),
+                  color: isFormValid? App_Colors.primarycolor:
+                  App_Colors.greycolor,),
                 child: Center(child: Text("Sign Up",style: TextStyle(
                     color: App_Colors.whitecolor,fontSize: 18,
                     fontWeight: FontWeight.w600),),
@@ -118,7 +166,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     fontWeight: FontWeight.w600),),
                 TextButton(onPressed: (){
                   Get.to(()=>LoginScreen());
-                }, child: Text("signup",style: TextStyle(
+                }, child: Text("login",style: TextStyle(
                     color: App_Colors.primarycolor,fontSize: 16,
                     fontWeight: FontWeight.w600),),
                 ),

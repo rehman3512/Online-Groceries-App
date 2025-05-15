@@ -14,6 +14,25 @@ class Location_screen extends StatefulWidget {
 
 class _Location_screenState extends State<Location_screen> {
 
+  final TextEditingController zoneController = TextEditingController();
+  final TextEditingController areaController = TextEditingController();
+  bool isFormValid = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    zoneController.addListener(validateForm);
+    areaController.addListener(validateForm);
+  }
+
+  void validateForm() {
+    setState(() {
+      isFormValid = zoneController.text.isNotEmpty &&
+          areaController.text.isNotEmpty;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +65,17 @@ class _Location_screenState extends State<Location_screen> {
                   color: App_Colors.greycolor,fontSize: 16,
                   fontWeight: FontWeight.w600),),
             ),
-            ListTile(title: Text("Dera Ismail Khan",style: TextStyle(
-                color: App_Colors.blackcolor,fontSize: 18,
-                fontWeight: FontWeight.w600),),
+            ListTile(title: TextFormField(
+              controller: zoneController,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                hintText: "Enter your zone",
+                hintStyle:  TextStyle(
+                    color: App_Colors.blackcolor,fontSize: 18,
+                    fontWeight: FontWeight.w400),
+              ),style: TextStyle( color: App_Colors.blackcolor,fontSize: 20,
+                fontWeight: FontWeight.w600),
+            ),
               trailing: Icon(Icons.keyboard_arrow_down),
             ),
             Divider(),
@@ -59,21 +86,30 @@ class _Location_screenState extends State<Location_screen> {
                   color: App_Colors.greycolor,fontSize: 16,
                   fontWeight: FontWeight.w600),),
             ),
-            ListTile(title: Text("Types of your area",style: TextStyle(
-                color: App_Colors.greycolor,fontSize: 18,
-                fontWeight: FontWeight.w600),),
+            ListTile(title: TextFormField(
+              controller: areaController,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Types of your area",
+                hintStyle: TextStyle(
+                    color: App_Colors.greycolor,fontSize: 18,
+                    fontWeight: FontWeight.w400),
+              ), style: TextStyle( color: App_Colors.greycolor,fontSize: 20,
+                fontWeight: FontWeight.w600),
+            ),
               trailing: Icon(Icons.keyboard_arrow_down),
             ),
             Divider(),
             SizedBox(height: 30,),
-            InkWell( onTap: (){
+            InkWell( onTap: isFormValid? (){
               Get.to(()=>LoginScreen());
-            },
+            }: null,
               child: Container( height: 55,
                 margin: EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.green,
+                  color: isFormValid? App_Colors.primarycolor:
+                  App_Colors.greycolor,
                 ),
                 child: Center(child: Text("Submit",style: TextStyle(
                     color: App_Colors.whitecolor,fontSize: 16,

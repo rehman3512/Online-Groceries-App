@@ -71,9 +71,36 @@ class _AccountViewState extends State<AccountView> {
         children: [
           SizedBox(height: 50,),
           ListTile(
-            leading: CircleAvatar(
+            leading: GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => Dialog(
+                    backgroundColor: Colors.transparent,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: InteractiveViewer(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                              image: AssetImage(Appassets.profileImage),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          height: MediaQuery.of(context).size.width * 0.8,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },child: CircleAvatar(
               backgroundImage: AssetImage(Appassets.profileImage),),
-            title: Row(children: [
+            ),
+             title: Row(children: [
               TextWidget(text: "Rehman", fontsize: 20,
                   fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
               SizedBox(width: 10,),

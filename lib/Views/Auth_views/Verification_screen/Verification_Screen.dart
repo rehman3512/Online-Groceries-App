@@ -11,6 +11,23 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
+
+  final TextEditingController codeController = TextEditingController();
+  bool isFormValid = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    codeController.addListener(validateForm);
+  }
+
+  void validateForm() {
+    setState(() {
+      isFormValid = codeController.text.isNotEmpty;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +44,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ),
             ),
             Spacer(),
-            InkWell( onTap: (){
+            InkWell( onTap: isFormValid? (){
               Get.to(()=>Location_screen());
-            }, child: Image.asset('assets/leftArowbutton.png'))
+            }: null, child: Image.asset('assets/leftArowbutton.png'))
           ],),
       ],),
       body: Column(
@@ -59,9 +76,16 @@ class _VerificationScreenState extends State<VerificationScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              decoration: InputDecoration(),
+              controller: codeController,
               keyboardType: TextInputType.number,
-
+              style: TextStyle( color: App_Colors.blackcolor,fontSize: 20,
+                  fontWeight: FontWeight.w600),
+              decoration: InputDecoration(
+                hintText: "Enter your code",
+                hintStyle:  TextStyle(
+                    color: App_Colors.blackcolor,fontSize: 18,
+                    fontWeight: FontWeight.w400),
+              ),
             ),
            ),
 
