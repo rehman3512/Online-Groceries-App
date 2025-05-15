@@ -91,8 +91,9 @@ class _AccountViewState extends State<AccountView> {
                     return Column(children: [
                       ListTile( onTap: (){},
                         leading: accountModelList[index].icon,
-                        title: Text(accountModelList[index].text.toString()),
-                        trailing:   Icon(Icons.chevron_right),
+                        title: TextWidget(text: accountModelList[index].text.toString(), fontsize: 18,
+                            fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
+                        trailing: IconButton(onPressed: (){}, icon: Icon(Icons.chevron_right)),
                       ),
                       Divider(),
                     ],);

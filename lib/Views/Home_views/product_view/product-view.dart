@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/controller/constants/alternative_button/alternative-button.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
@@ -90,7 +91,7 @@ class _ProductViewState extends State<ProductView> {
                 color: App_Colors.primarycolor,)),
               Spacer(),
               TextWidget(text: "\$${price.toStringAsFixed(2)}", fontsize: 24,
-                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w400),
+                  fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
               SizedBox(width: 10,),
             ],),
           ),
@@ -120,7 +121,23 @@ class _ProductViewState extends State<ProductView> {
             TextWidget(text: "Neutrition", fontsize: 18, fontcolor: App_Colors.blackcolor,
                 fontweight: FontWeight.w600),
             Spacer(),
-            IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(height: 20,width: 35,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(5)
+                  ),child: Center(
+                    child: TextWidget(text: "100gr", fontsize: 9, fontcolor: App_Colors.darkgreycolor,
+                        fontweight: FontWeight.w600),
+                  ),
+                ),
+                SizedBox(width: 10,),
+                IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),
+              ],
+            ),
             SizedBox(width: 10,)
           ],),
           Divider(),

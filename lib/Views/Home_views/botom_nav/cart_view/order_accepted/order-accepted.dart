@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/cart_view/cart_view.dart';
 import 'package:online_groceries_app/controller/constants/alternative_button/alternative-button.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
@@ -33,13 +34,13 @@ class _OrderAcceptedState extends State<OrderAccepted> {
               fontsize: 16, fontcolor: App_Colors.greycolor, fontweight: FontWeight.w400),
           Spacer(),
           InkWell( onTap: (){
-            Get.to(()=>CartView());
+            Get.to(()=>BottomNav());
           },
               child: AlternativeButton(text: "Track Order")),
           SizedBox(height: 2,),
           InkWell(  onTap: (){
             Navigator.push(context, MaterialPageRoute(
-                builder: (context)=>CartView())
+                builder: (context)=>BottomNav())
             );
           },
             child: Container(height: 65,width: 350,

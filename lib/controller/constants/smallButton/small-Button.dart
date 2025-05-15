@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
+import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 
 class smallButton extends StatelessWidget {
   final String text;
@@ -8,7 +9,8 @@ class smallButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Text(text),
+      TextWidget(text: text, fontsize: 16, fontcolor: App_Colors.blackcolor,
+          fontweight: FontWeight.w600),
       Spacer(),
       Container(height: 35,width: 35,
       decoration: BoxDecoration(

@@ -75,8 +75,10 @@ class _SearchViewState extends State<SearchView> {
                       child: Center(child: Image.asset(exploreModelList[index].image.toString(),),),
                     ),
                     SizedBox(height: 10,),
-                    Text(exploreModelList[index].mainText.toString()),
-                    Text(exploreModelList[index].subText.toString()),
+                    TextWidget(text: exploreModelList[index].mainText.toString(), fontsize: 16,
+                        fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),
+                    TextWidget(text: exploreModelList[index].subText.toString(), fontsize: 14,
+                        fontcolor: App_Colors.greycolor, fontweight: FontWeight.w600),
                     SizedBox(height: 8,),
                     smallButton(text: exploreModelList[index].priceText.toString(),)
                   ],),

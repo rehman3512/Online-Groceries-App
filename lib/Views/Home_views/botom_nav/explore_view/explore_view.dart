@@ -23,10 +23,10 @@ class _ExploreViewState extends State<ExploreView> {
 
   List <FindProductsModel> findProductsList = [
     FindProductsModel(img: Appassets.freshFruitsImage, text: "Fresh Fruits \n & Vegetable", color: Colors.green.shade100,navigate: SearchView()),
-    FindProductsModel(img: Appassets.cookingOilImage, text: "Cooking Oil \n & Ghee",color: Colors.orange.shade100,navigate: BeveragesView()),
-    FindProductsModel(img: Appassets.meatFishImage, text: "Meat & Fish",color: Colors.pink.shade100,navigate: BeveragesView()),
-    FindProductsModel(img: Appassets.bakerySnacksImage, text: "Bakery & Snacks",color: Colors.purple.shade100,navigate: BeveragesView()),
-    FindProductsModel(img: Appassets.dairyEggsImage, text: "Dairy & Eggs",color: Colors.orangeAccent.shade100,navigate: BeveragesView()),
+    FindProductsModel(img: Appassets.cookingOilImage, text: "Cooking Oil \n & Ghee",color: Colors.orange.shade100,navigate: SearchView()),
+    FindProductsModel(img: Appassets.meatFishImage, text: "Meat & Fish",color: Colors.pink.shade100,navigate: SearchView()),
+    FindProductsModel(img: Appassets.bakerySnacksImage, text: "Bakery & Snacks",color: Colors.purple.shade100,navigate: SearchView()),
+    FindProductsModel(img: Appassets.dairyEggsImage, text: "Dairy & Eggs",color: Colors.orangeAccent.shade100,navigate: SearchView()),
     FindProductsModel(img: Appassets.beveragesImage, text: "Beverages",color: Colors.teal.shade50,navigate: BeveragesView()),
   ];
   @override

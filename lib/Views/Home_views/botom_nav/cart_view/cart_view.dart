@@ -65,7 +65,9 @@ class _CartViewState extends State<CartView> {
                 TextWidget(text: "Check Out", fontsize: 24, fontcolor: App_Colors.blackcolor,
                     fontweight: FontWeight.w600),
                 Spacer(),
-                Icon(Icons.close)
+                IconButton(onPressed: (){
+                  Get.back();
+                }, icon: Icon(Icons.close))
               ],),
               SizedBox(height: 10,),
               Divider(),
