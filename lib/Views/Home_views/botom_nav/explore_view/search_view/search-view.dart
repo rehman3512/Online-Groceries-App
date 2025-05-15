@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_groceries_app/Model/explore_model/explore-Model.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/filter_view/filter-view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/appasset/appasset.dart';
 import 'package:online_groceries_app/controller/constants/smallButton/small-Button.dart';
@@ -48,7 +50,9 @@ class _SearchViewState extends State<SearchView> {
                   ),
                 ),
               ),
-              Icon(Icons.filter_list),
+              IconButton(onPressed: (){
+                Get.to(()=>FilterView());
+              }, icon: Icon(Icons.filter_list),)
             ],),
           SizedBox(height: 10,),
           Expanded(

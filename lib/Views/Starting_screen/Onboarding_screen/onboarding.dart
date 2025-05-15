@@ -19,9 +19,7 @@ class _onboardingState extends State<onboarding> {
     return Scaffold(
       body: Stack(
         children: [
-          //ImageIcon(AssetImage(Appasset.appIconlogo),color: App_Colors.primarycolor,),
-          //Image.asset(Appasset.appIconlogo,color: App_Colors.primarycolor,),
-           Positioned( //top: 0,left: 0,
+           Positioned(
               child: Image.asset('assets/8140 1.png',fit: BoxFit.fill,
               width: double.infinity,height: double.infinity,)),
           Column(

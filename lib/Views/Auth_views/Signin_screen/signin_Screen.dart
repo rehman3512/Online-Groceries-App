@@ -15,6 +15,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: App_Colors.whitecolor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -14,6 +14,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: App_Colors.whitecolor,
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [

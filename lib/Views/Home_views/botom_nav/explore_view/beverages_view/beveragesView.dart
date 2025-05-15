@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_groceries_app/Model/explore_model/explore-Model.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/explore_view/filter_view/filter-view.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
@@ -37,7 +38,9 @@ class _BeveragesViewState extends State<BeveragesView> {
           SizedBox(height: 50,),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.arrow_back_ios_new),
+              IconButton(onPressed: (){
+                Get.back();
+              }, icon: Icon(Icons.arrow_back_ios_new),),
               TextWidget(text: "Beverages", fontsize: 20, fontcolor: App_Colors.blackcolor,
                   fontweight: FontWeight.w600),
               IconButton(onPressed: (){

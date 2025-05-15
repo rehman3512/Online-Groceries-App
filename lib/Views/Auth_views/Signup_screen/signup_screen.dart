@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_groceries_app/Views/Auth_views/Login_screen/Login_Screen.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -12,9 +13,11 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: App_Colors.whitecolor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,8 +84,8 @@ class _SignupScreenState extends State<SignupScreen> {
               Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Icon(Icons.remove_red_eye_sharp,size: 20,
-                  color: App_Colors.greycolor,),
+                child: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off_outlined,size: 20,
+                  color: App_Colors.greycolor,),)
               ),
             ],),
             Divider(),
@@ -95,7 +98,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 30,),
             Center(child: InkWell( onTap: (){
-              Get.to(()=>HomeScreen());
+              Get.to(()=>BottomNav());
             },
               child: Container(height: 55,width: 340,
                 decoration: BoxDecoration(

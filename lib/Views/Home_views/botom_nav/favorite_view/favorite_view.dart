@@ -41,7 +41,7 @@ class _FavoriteViewState extends State<FavoriteView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNav(),
       // bottomNavigationBar: BottomNavigationBar(
       //   unselectedItemColor: App_Colors.blackcolor,
       //   selectedItemColor: App_Colors.primarycolor,

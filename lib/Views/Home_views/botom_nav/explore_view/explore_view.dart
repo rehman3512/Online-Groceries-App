@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:online_groceries_app/Model/find-products-model.dart';
+import 'package:online_groceries_app/Model/find_prodeucts/find-products-model.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/account_view/account_view.dart';
 import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
@@ -20,10 +20,7 @@ class ExploreView extends StatefulWidget {
 }
 
 class _ExploreViewState extends State<ExploreView> {
-  int selectedindex=0;
-  final List pages= [
-    ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
-  ];
+
   List <FindProductsModel> findProductsList = [
     FindProductsModel(img: Appassets.freshFruitsImage, text: "Fresh Fruits \n & Vegetable", color: Colors.green.shade100,navigate: SearchView()),
     FindProductsModel(img: Appassets.cookingOilImage, text: "Cooking Oil \n & Ghee",color: Colors.orange.shade100,navigate: BeveragesView()),
@@ -35,40 +32,8 @@ class _ExploreViewState extends State<ExploreView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   unselectedItemColor: App_Colors.blackcolor,
-      //   selectedItemColor: App_Colors.primarycolor,
-      //   currentIndex: selectedindex,
-      //   onTap: (index){
-      //     selectedindex=index;
-      //     setState(() {
-      //
-      //     });
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(
-      //         icon: IconButton(onPressed: (){
-      //           Get.to(()=>HomeScreen());
-      //         }, icon: Icon(Icons.shopify_sharp)),
-      //         label: "shop"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>ExploreView());
-      //     }, icon: Icon(Icons.search),),label: "Explore"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>CartView());
-      //     }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>FavoriteView());
-      //     }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>AccountView());
-      //     }, icon: Icon(Icons.person)), label: "Account"),
-      //   ],
-      // ),
       body: Column(
         children: [
-          pages.elementAt(selectedindex),
           SizedBox(height: 20,),
           Align(
             child: Center( child: TextWidget(text: "Find Product", fontsize: 24,

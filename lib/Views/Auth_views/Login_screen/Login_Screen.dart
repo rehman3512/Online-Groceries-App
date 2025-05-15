@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_groceries_app/Views/Auth_views/Signup_screen/signup_screen.dart';
 import 'package:online_groceries_app/Views/Home_views/HomeScreen.dart';
+import 'package:online_groceries_app/Views/Home_views/botom_nav/bottom_nav.dart';
 import 'package:online_groceries_app/controller/constants/app_color/app_colors.dart';
 import 'package:online_groceries_app/controller/constants/text_widget/text-widget.dart';
 
@@ -16,6 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: App_Colors.whitecolor,
       body: SingleChildScrollView(
           child:  Padding(
             padding: const EdgeInsets.all(20),
@@ -46,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextWidget(text: ".........", fontsize: 30, fontcolor: App_Colors.blackcolor,
                     fontweight: FontWeight.w600),
                 Spacer(),
-                Icon(Icons.remove_red_eye_sharp,color: App_Colors.greycolor,),
+                Icon(Icons.visibility_off_outlined,color: App_Colors.greycolor,),
               ],),
               Divider(),
               Row(
@@ -60,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 20,),
               Center(child: InkWell( onTap: (){
-                Get.to(()=>HomeScreen());
+                Get.to(()=>BottomNav());
               },
                 child: Container(height: 55,width: 340,
                   decoration: BoxDecoration(

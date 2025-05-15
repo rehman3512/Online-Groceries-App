@@ -17,9 +17,9 @@ class _Location_screenState extends State<Location_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: App_Colors.whitecolor,
       body: SingleChildScrollView(
         child: Column(
-          //  mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 80,),

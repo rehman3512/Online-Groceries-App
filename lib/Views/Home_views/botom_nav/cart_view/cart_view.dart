@@ -21,33 +21,33 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
-  int selectedindex=0;
-  final List pages= [
-    ShopView(),ExploreView(),CartView(),FavoriteView(),AccountView(),
-  ];
+
   List<CartModel> cartModelList=[
     CartModel(image: Appassets.bellPaperImage, mainText: "Bell Paper Red",
-        subText: "1kg, Price",priceText: "\$${4.99}"),
+        subText: "1kg, Price",priceText: "\$${4.99}",value: "Value1"),
     CartModel(image: Appassets.eggChickenRedImage, mainText: "Egg Chicken Red",
-        subText: "4pcs, Price",priceText: "\$${1.99}"),
+        subText: "4pcs, Price",priceText: "\$${1.99}",value: "value2"),
     CartModel(image: Appassets.bananaImage, mainText: "Organic Bananas",
-        subText: "12kg, Price",priceText: "\$${2.99}"),
+        subText: "12kg, Price",priceText: "\$${2.99}",value: "value"),
     CartModel(image: Appassets.gingerImage, mainText: "Ginger",
-        subText: "250gm, Price",priceText: "\$${2.99}")
+        subText: "250gm, Price",priceText: "\$${2.99}",value: "value4")
   ];
   
   List<BottomSheetModel> bottomSheetModelList = [
     BottomSheetModel(firstText: "Delivery", lastText: "Select Method",),
-    BottomSheetModel(firstText: "Payment",
-        lastText: "${Icon(Icons.flag_circle_rounded)}"),
+    BottomSheetModel(firstText: "Payment", lastText: "PKR"),
     BottomSheetModel(firstText: "Promo Code", lastText: "Pick discount"),
     BottomSheetModel(firstText: "Total Cost", lastText: "\$${13.97}"),
   ];
-  
-  double price=0;
-  double price1=0;
-  int value=1;
 
+  List<int> quantityList = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    quantityList = List.filled(cartModelList.length,1);
+  }
 
   showBottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
@@ -107,43 +107,12 @@ class _CartViewState extends State<CartView> {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   unselectedItemColor: App_Colors.blackcolor,
-      //   selectedItemColor: App_Colors.primarycolor,
-      //   currentIndex: selectedindex,
-      //   onTap: (index){
-      //     selectedindex=index;
-      //     setState(() {
-      //
-      //     });
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(
-      //         icon: IconButton(onPressed: (){
-      //           Get.to(()=>HomeScreen());
-      //         }, icon: Icon(Icons.shopify_sharp)),
-      //         label: "shop"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>ExploreView());
-      //     }, icon: Icon(Icons.search),),label: "Explore"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>CartView());
-      //     }, icon: Icon(Icons.shopping_cart)), label: "Cart"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>FavoriteView());
-      //     }, icon: Icon(Icons.favorite_border)), label: "Favorite"),
-      //     BottomNavigationBarItem(icon: IconButton(onPressed: (){
-      //       Get.to(()=>AccountView());
-      //     }, icon: Icon(Icons.person)), label: "Account"),
-      //   ],
-      // ),
       backgroundColor: App_Colors.whitecolor,
       body: Column(children: [
-        pages.elementAt(selectedindex),
         SizedBox(height: 40,),
         Align(child: Center(child: TextWidget(text: "My Cart", fontsize: 20,
           fontcolor: App_Colors.blackcolor, fontweight: FontWeight.w600),),),
@@ -153,73 +122,87 @@ class _CartViewState extends State<CartView> {
           child: ListView.builder(
               itemCount: cartModelList.length,
               itemBuilder: (context,index){
+                double itemPrice = double.parse(
+                  cartModelList[index].priceText!.replaceAll(RegExp(r'[^\d.]'),''));
                 return Column(
                   children: [
-                    Row(children: [
-                      Column(children: [
-                        Padding(
-                          padding: const EdgeInsets.all(15),
-                          child: Image.asset(cartModelList[index].image.toString()),
-                        )
-                      ],),
-                     //  Expanded(
-                     //   child: ListTile(
-                     //       title:  TextWidget(text: cartModelList[index].mainText.toString(),
-                     //           fontsize: 18, fontcolor: App_Colors.blackcolor,
-                     //           fontweight: FontWeight.w600),
-                     //       subtitle:  TextWidget(text: cartModelList[index].subText.toString(),
-                     //           fontsize: 16, fontcolor: App_Colors.greycolor,
-                     //           fontweight: FontWeight.w600),
-                     //       trailing: Icon(Icons.close,color: App_Colors.greycolor,size: 28)
-                     //   ),
-                     // ),
-                      InkWell( onTap: (){
-                        if(value>1)
-                          {
-                            value--;
-                            price-=price1;
-                          }
-                        setState(() {
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container( height: 80,width: 80,
+                            child: Image.asset(cartModelList[index].image.toString()),
+                          ),
+                          SizedBox(width: 10,),
+                          Expanded(child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Expanded(child: TextWidget(text: cartModelList[index].mainText.toString(),
+                                    fontsize: 18, fontcolor: App_Colors.blackcolor,
+                                    fontweight: FontWeight.w600),),
+                                Icon(Icons.close,color: App_Colors.greycolor,size: 28)
+                              ],),
+                              SizedBox(height: 5,),
+                              TextWidget(text: cartModelList[index].subText.toString(),
+                                  fontsize: 16, fontcolor: App_Colors.greycolor,
+                                  fontweight: FontWeight.w600),
+                              SizedBox(height: 10,),
+                              Row(children: [
+                                InkWell( onTap: (){
+                                  if(quantityList[index]>1)
+                                  {
+                                    quantityList[index]--;
+                                    // price-=price1;
+                                  }
+                                  setState(() {
 
-                        });
-                      },
-                        child: Container(height: 45,width: 45,
-                          decoration: BoxDecoration(
-                              color: App_Colors.whitecolor,
-                              borderRadius: BorderRadius.circular(15),
-                              border: Border.all(color: Colors.grey.shade300)
-                          ), child: Center(child: Icon(Icons.remove,
-                            color: App_Colors.greycolor,)),
-                        ),
-                      ),
-                      SizedBox(width: 15,),
-                      TextWidget(text: "$value", fontsize: 20,
-                          fontcolor: App_Colors.blackcolor,
-                          fontweight: FontWeight.w600),
-                      SizedBox(width: 15,),
-                      InkWell( onTap: (){
-                        value++;
-                        price+=price1;
-                        setState(() {
+                                  });
+                                },
+                                  child: Container(height: 45,width: 45,
+                                    decoration: BoxDecoration(
+                                        color: App_Colors.whitecolor,
+                                        borderRadius: BorderRadius.circular(15),
+                                        border: Border.all(color: Colors.grey.shade300)
+                                    ), child: Center(child: Icon(Icons.remove,
+                                      color: App_Colors.greycolor,)),
+                                  ),
+                                ),
+                                SizedBox(width: 15,),
+                                TextWidget(text: quantityList[index].toString(), fontsize: 20,
+                                    fontcolor: App_Colors.blackcolor,
+                                    fontweight: FontWeight.w600),
+                                SizedBox(width: 15,),
+                                InkWell( onTap: (){
+                                  quantityList[index]++;
+                                  // price+=price1;
+                                  setState(() {
 
-                        });
-                      },
-                        child: Container(height: 45,width: 45,
-                          decoration: BoxDecoration(
-                              color: App_Colors.whitecolor,
-                              borderRadius: BorderRadius.circular(15),
-                              border: Border.all(color: Colors.grey.shade300)
-                          ), child: Center(child: Icon(Icons.add,
-                            color: App_Colors.primarycolor,)),
-                        ),
+                                  });
+                                },
+                                  child: Container(height: 45,width: 45,
+                                    decoration: BoxDecoration(
+                                        color: App_Colors.whitecolor,
+                                        borderRadius: BorderRadius.circular(15),
+                                        border: Border.all(color: Colors.grey.shade300)
+                                    ), child: Center(child: Icon(Icons.add,
+                                      color: App_Colors.primarycolor,)),
+                                  ),
+                                ),
+                                Spacer(),
+                                TextWidget(text: "\$${(itemPrice * quantityList[index]).toStringAsFixed(2)}",
+                                    fontsize: 18, fontcolor: App_Colors.blackcolor,
+                                    fontweight: FontWeight.w600),
+                                SizedBox(width: 20,)
+                              ],)
+                            ],
+                          )),
+                        ],
                       ),
-                      Spacer(),
-                      TextWidget(text: cartModelList[index].priceText.toString(),
-                          fontsize: 18, fontcolor: App_Colors.blackcolor,
-                          fontweight: FontWeight.w600),
-                      SizedBox(width: 20,)
-                    ],),
-                    Divider()
+                    ),
+                    Divider(thickness: 1, color: Colors.grey.shade300),
                   ],
                 );
               }),
@@ -233,3 +216,76 @@ class _CartViewState extends State<CartView> {
     );
   }
 }
+
+
+
+
+// Column(
+// children: [
+// Row(children: [
+// Column(children: [
+// Padding(
+// padding: const EdgeInsets.all(15),
+// child: Image.asset(cartModelList[index].image.toString()),
+// )
+// ],),
+// Expanded(
+// child: ListTile(
+// title:  TextWidget(text: cartModelList[index].mainText.toString(),
+// fontsize: 18, fontcolor: App_Colors.blackcolor,
+// fontweight: FontWeight.w600),
+// subtitle:  TextWidget(text: cartModelList[index].subText.toString(),
+// fontsize: 16, fontcolor: App_Colors.greycolor,
+// fontweight: FontWeight.w600),
+// trailing: Icon(Icons.close,color: App_Colors.greycolor,size: 28)
+// ),
+// ),
+// InkWell( onTap: (){
+// if(quantityList[index]>1)
+// {
+// quantityList[index]--;
+// // price-=price1;
+// }
+// setState(() {
+//
+// });
+// },
+// child: Container(height: 45,width: 45,
+// decoration: BoxDecoration(
+// color: App_Colors.whitecolor,
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all(color: Colors.grey.shade300)
+// ), child: Center(child: Icon(Icons.remove,
+// color: App_Colors.greycolor,)),
+// ),
+// ),
+// SizedBox(width: 15,),
+// TextWidget(text: quantityList[index].toString(), fontsize: 20,
+// fontcolor: App_Colors.blackcolor,
+// fontweight: FontWeight.w600),
+// SizedBox(width: 15,),
+// InkWell( onTap: (){
+// quantityList[index]++;
+// // price+=price1;
+// setState(() {
+//
+// });
+// },
+// child: Container(height: 45,width: 45,
+// decoration: BoxDecoration(
+// color: App_Colors.whitecolor,
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all(color: Colors.grey.shade300)
+// ), child: Center(child: Icon(Icons.add,
+// color: App_Colors.primarycolor,)),
+// ),
+// ),
+// Spacer(),
+// TextWidget(text: "\$${(itemPrice * quantityList[index]).toStringAsFixed(2)}",
+// fontsize: 18, fontcolor: App_Colors.blackcolor,
+// fontweight: FontWeight.w600),
+// SizedBox(width: 20,)
+// ],),
+// Divider()
+// ],
+// ),
