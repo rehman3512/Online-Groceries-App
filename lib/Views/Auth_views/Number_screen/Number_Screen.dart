@@ -13,7 +13,7 @@ class NumberScreen extends StatefulWidget {
 
 class _NumberScreenState extends State<NumberScreen> {
 
-  PhoneNumber? phoneNumber;
+  PhoneNumber phoneNumber = PhoneNumber(isoCode: 'PK');
   bool isFormValid = false;
 
   @override
@@ -24,9 +24,9 @@ class _NumberScreenState extends State<NumberScreen> {
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-        InkWell(onTap: isFormValid ?(){
+        GestureDetector(onTap: (){
           Get.to(()=>VerificationScreen());
-        } : null,
+        } ,
           child: Image.asset('assets/leftArowbutton.png'),),
           SizedBox(height: 10,),
       ],),
@@ -56,12 +56,14 @@ class _NumberScreenState extends State<NumberScreen> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: InternationalPhoneNumberInput(onInputChanged: (value){
-            phoneNumber = value;
+          child: InternationalPhoneNumberInput(onInputChanged: (phoneNumber){
+             initialValue: PhoneNumber(isoCode: 'Pk');
+            onInputChanged: (PhoneNumber number) {
             setState(() {
-              isFormValid = value.phoneNumber != null &&
-                  value.phoneNumber!.isNotEmpty;
+            phoneNumber = number;
+            isFormValid = number.phoneNumber != null && number.phoneNumber!.isNotEmpty;
             });
+            };
           },
             selectorConfig: SelectorConfig(
               selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
