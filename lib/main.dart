@@ -20,6 +20,7 @@ import 'package:online_groceries_app/Views/Starting_screen/Splash_screen/splash_
 import 'package:online_groceries_app/Views/Auth_views/Login_screen/Login_Screen.dart';
 import 'package:online_groceries_app/Views/Starting_screen/onboarding_intro_screens/onboarding-intro-screens.dart';
 import 'package:online_groceries_app/Views/gridview.dart';
+import 'package:online_groceries_app/controller/state_management/state-management.dart';
 import 'package:online_groceries_app/password.dart';
 
 void main()
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splash_Screen()
+      home: CounterScreen()
     );
   }
 }
