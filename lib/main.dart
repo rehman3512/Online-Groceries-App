@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_groceries_app/Calculation.dart';
 import 'package:online_groceries_app/Views/Auth_views/Location_screen/Location%20view.dart';
 import 'package:online_groceries_app/Views/Auth_views/Number_screen/Number_Screen.dart';
 import 'package:online_groceries_app/Views/Auth_views/Signin_screen/signin_Screen.dart';
@@ -22,6 +23,7 @@ import 'package:online_groceries_app/Views/Starting_screen/onboarding_intro_scre
 import 'package:online_groceries_app/Views/gridview.dart';
 import 'package:online_groceries_app/controller/state_management/state-management.dart';
 import 'package:online_groceries_app/password.dart';
+import 'package:online_groceries_app/routes.dart';
 
 void main()
 {
@@ -34,7 +36,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterScreen()
+      // initialRoute: Approutes.SplashScreen,
+      // routes: Approutes.routes(),
+      home: CalculationScreen()
     );
   }
 }
+
