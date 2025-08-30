@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // initialRoute: Approutes.SplashScreen,
       // routes: Approutes.routes(),
-      home: CalculationScreen()
+      home: SwitchView()
     );
   }
 }
